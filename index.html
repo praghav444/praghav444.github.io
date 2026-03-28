@@ -1,400 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Pushpendra Raghav</title>
+  <title>Pushpendra Raghav | Research Engineer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  <script src="./css/jquery.min.js"></script>
-  <script src="./css/bootstrap.min.js"></script>
+  <meta name="description" content="Pushpendra Raghav - Research Engineer at The University of Alabama, specializing in ecohydrology, land surface modeling, and machine learning.">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
-   @font-face {
-    font-family: 'caviar_dreamsbold';
-    src: url('Caviar_Dreams_Bold-webfont.eot');
-    src: url('Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Caviar_Dreams_Bold-webfont.woff2') format('woff2'),
-         url('Caviar_Dreams_Bold-webfont.woff') format('woff'),
-         url('Caviar_Dreams_Bold-webfont.ttf') format('truetype'),
-         url('Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
- body {
-	text-align:justify; 
-	max-width:100%;
-	overflow-x:hidden;		
-	}
-	html {
-	scroll-behavior: smooth;
-	max-width:100%;
-	overflow-x:hidden;
-	}    
-	.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
+    :root {
+      --navy:   #1a2f4e;
+      --blue:   #2471a3;
+      --teal:   #1a8c7a;
+      --light:  #f4f6f9;
+      --mid:    #e8ecf0;
+      --text:   #2c3e50;
+      --muted:  #6c757d;
     }
-    .about {
-    background: #2c3e50;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    color: white;
-	}
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: white;
-      padding: 25px;
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.75;
     }
-	div
-	{
-	padding-left:5px;
-	padding-right:5px;
-	font-family: caviar_dreamsbold;
-	}
+
+    /* ── Navbar ── */
+    .navbar {
+      background-color: var(--navy) !important;
+      padding: 0.6rem 1.5rem;
+    }
+    .navbar-brand { color: #fff !important; font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
+    .navbar-nav .nav-link { color: rgba(255,255,255,0.82) !important; font-size: 0.88rem; padding: 0.5rem 0.9rem; }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: #fff !important; }
+    .navbar-toggler { border-color: rgba(255,255,255,0.3); }
+    .navbar-toggler-icon { filter: invert(1); }
+
+    /* ── Hero ── */
+    #hero {
+      background-image: linear-gradient(rgba(20,40,70,0.72), rgba(20,40,70,0.72)), url('./Back_3.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+    #hero h1 { font-size: 2.6rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
+    #hero .subtitle { font-size: 1.1rem; color: #b8d4f0; font-weight: 400; }
+    #hero .bio { color: rgba(255,255,255,0.88); font-size: 0.96rem; line-height: 1.8; text-align: justify; }
+    #hero .badge-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #e0eeff;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      margin: 3px 2px;
+      display: inline-block;
+    }
+    .profile-img {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+    .social-icon { font-size: 1.6rem; color: rgba(255,255,255,0.75); margin: 0 6px; transition: color 0.2s; }
+    .social-icon:hover { color: #fff; }
+
+    /* ── Section headers ── */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      border-left: 4px solid var(--blue);
+      padding-left: 12px;
+      margin-bottom: 1.5rem;
+    }
+    section { padding: 64px 0; }
+    section:nth-child(even) { background: var(--light); }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 8px; top: 6px; bottom: 6px;
+      width: 2px; background: var(--mid);
+    }
+    .timeline-item { position: relative; margin-bottom: 1.6rem; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -24px; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+    .timeline-item .date { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .timeline-item .role { font-weight: 600; color: var(--navy); }
+    .timeline-item .org  { font-size: 0.9rem; color: var(--text); }
+
+    /* ── Publications ── */
+    .pub-item { margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--mid); }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-badge {
+      font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 10px;
+      display: inline-block; margin-bottom: 4px;
+    }
+    .badge-pub   { background: #d4edda; color: #155724; }
+    .badge-rev   { background: #fff3cd; color: #856404; }
+    .badge-prep  { background: #e2e3e5; color: #383d41; }
+    .pub-year { color: var(--blue); font-weight: 600; }
+    .pub-link { color: var(--blue); text-decoration: none; font-size: 0.85rem; }
+    .pub-link:hover { text-decoration: underline; }
+
+    /* ── Awards ── */
+    .award-item { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+    .award-item .award-name { font-weight: 500; }
+    .award-item .award-date { font-size: 0.82rem; color: var(--muted); white-space: nowrap; margin-left: 1rem; font-style: italic; }
+
+    /* ── Cards (grants, software) ── */
+    .info-card {
+      border: 1px solid var(--mid);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      background: #fff;
+      transition: box-shadow 0.2s;
+    }
+    .info-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+    .info-card .card-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .info-card .card-sub   { font-size: 0.83rem; color: var(--muted); }
+    .badge-status-rev  { background: #fff3cd; color: #856404; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; }
+    .badge-status-app  { background: #d4edda; color: #155724; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; }
+    .badge-status-dec  { background: #e2e3e5; color: #383d41; font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; }
+
+    /* ── Projects ── */
+    .proj-card { border: 1px solid var(--mid); border-radius: 8px; overflow: hidden; background:#fff; height:100%; }
+    .proj-card img { width:100%; height:200px; object-fit:cover; }
+    .proj-card .proj-body { padding: 0.9rem 1rem; font-size: 0.85rem; }
+    .proj-card .proj-body a { color: var(--blue); }
+
+    /* ── Contact ── */
+    #contact { background: var(--navy); color: #fff; }
+    #contact .section-title { color: #fff; border-color: #7fb3d3; }
+    #contact a { color: #7fb3d3; }
+    #contact a:hover { color: #fff; }
+    .contact-icon { font-size: 1.3rem; width: 26px; color: #7fb3d3; }
+
+    /* ── Footer ── */
+    footer { background: #111a27; color: rgba(255,255,255,0.45); font-size: 0.8rem; text-align: center; padding: 1rem; }
+
+    /* ── Misc ── */
+    .section-nav-btn {
+      display: inline-block;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+    .section-nav-btn:hover { background: var(--blue); color: #fff; }
+
+    @media (max-width: 767px) {
+      #hero h1 { font-size: 1.8rem; }
+      .profile-img { width: 140px; height: 140px; }
+    }
   </style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
 
-<nav class="navbar navbar-inverse navbar-fixed-top" >
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right"">
-        <li class="active"><a href="#about">About</a></li>
-        <li><a href="https://alabama.box.com/s/auwy20kss4httuunwonw9nm4hhc9aiok" target="_blank">CV</a></li>
-        <li><a href="#pubs">Publications</a></li>
-	<li><a href="#Proj">Projects</a>		   
-		</li>
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#hero">Pushpendra Raghav</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#hero">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#appointments">Appointments</a></li>
+        <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="#grants">Grants</a></li>
+        <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#software">Software</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://alabama.box.com/s/auwy20kss4httuunwonw9nm4hhc9aiok" target="_blank"><i class="fa fa-file-pdf"></i> CV</a></li>
       </ul>
-      
     </div>
   </div>
 </nav>
 
-<div class="container-fluid text-center" style="padding: 50px 0; background-image: url('./Back_3.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;" id="about">
-  <div class="row" style="background-color: rgba(0, 0, 0, 0); padding: 60px 0 0 0;">
-    <div class="col-sm-2"></div>
+<!-- ═══════════════════════════ HERO / ABOUT ═══════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
 
-    <div class="col-sm-5" style="background-color: rgba(0, 0, 0, 0); font-size: 18px; color: white; text-align: justify;">
-      <p>
-        I am currently a Research Engineer/Scientist working with
-<a href="https://mkumar.people.ua.edu/" target="_blank" style="color: #ddd; text-decoration: underline;">Professor Mukesh Kumar</a>
-in the Department of Civil, Construction, and Environmental Engineering at the University of Alabama. My research work focuses on improving our understanding and prediction of ecohydrological processes in current-generation land surface models.
-Specifically, my research aims to enhance the estimation of plant traits, evapotranspiration, and soil moisture to better understand how environmental extremes (such as droughts and heatwaves) shape ecosystem function. 
-	      To achieve this, I integrate observational data including eddy covariance flux tower and remote sensing datasets with both process-based Earth system models and data-driven machine learning approaches.
-      </p>
+      <div class="col-lg-8 order-2 order-lg-1">
+        <h1>Pushpendra Raghav</h1>
+        <p class="subtitle mb-3">Research Engineer &nbsp;·&nbsp; The University of Alabama</p>
 
-      <div style="text-align: left;">
-        <strong>Research Interests</strong>
-        <ul>
-          <li>Land-atmosphere interactions</li>
-          <li>Remote sensing of hydrosphere and biosphere</li>
-          <li>Boundary layer turbulence</li>
-          <li>Land surface modeling</li>
-          <li>Big data and machine learning applications in hydrology</li>
-          <li>Land cover and climate change impacts</li>
-        </ul>
+        <p class="bio mb-3">
+          I am a Research Engineer/Scientist working with
+          <a href="https://mkumar.people.ua.edu/" target="_blank" style="color:#b8d4f0;">Professor Mukesh Kumar</a>
+          in the Department of Civil, Construction, and Environmental Engineering at the University of Alabama.
+          My work improves our understanding and prediction of ecohydrological processes — streamflow extremes,
+          drought onset, evapotranspiration, and soil moisture — through synergistic use of observational data
+          (eddy covariance flux towers, remote sensing) and models (Earth system models and data-driven machine
+          learning). I received the <strong style="color:#e8f4fd;">Outstanding Dissertation Award</strong> from my department in 2025.
+        </p>
 
-        <strong>Skills</strong>
-        <ul>
-          <li>Eco-hydrological modeling</li>
-          <li>Physics-guided machine learning</li>
-          <li>Programming in Python, R, FORTRAN, and MATLAB</li>
-          <li>Data analysis and visualization</li>
-          <li>Shell scripting</li>
-          <li>Parallel computing</li>
-          <li>Geographic Information Systems (GIS)</li>
-          <li>Microsoft Office Suite</li>
-          <li>LaTeX for scientific writing</li>
-        </ul>
+        <p class="mb-3" style="color:rgba(255,255,255,0.7); font-size:0.88rem;"><strong style="color:#b8d4f0;">Research Interests</strong></p>
+        <div class="mb-4">
+          <span class="badge-pill">Land-atmosphere interactions</span>
+          <span class="badge-pill">Ecohydrology</span>
+          <span class="badge-pill">Remote sensing</span>
+          <span class="badge-pill">Land surface modeling</span>
+          <span class="badge-pill">Machine learning in hydrology</span>
+          <span class="badge-pill">Physics-informed ML</span>
+          <span class="badge-pill">Evapotranspiration</span>
+          <span class="badge-pill">Soil moisture</span>
+          <span class="badge-pill">Streamflow extremes</span>
+          <span class="badge-pill">Drought early warning</span>
+        </div>
+
+        <div class="mb-3">
+          <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ" target="_blank" class="social-icon" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+          <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" class="social-icon" title="ORCID"><i class="fa-brands fa-orcid"></i></a>
+          <a href="https://github.com/praghav444" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/praghav444" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://twitter.com/Pushpen41145869" target="_blank" class="social-icon" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.researchgate.net/profile/Pushpendra-Raghav" target="_blank" class="social-icon" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+        </div>
+
+        <a href="https://alabama.box.com/s/auwy20kss4httuunwonw9nm4hhc9aiok" target="_blank"
+           style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);color:#fff;border-radius:6px;padding:7px 18px;text-decoration:none;font-size:0.88rem;margin-right:8px;">
+          <i class="fa fa-download me-1"></i>Download CV
+        </a>
+        <a href="mailto:ppushpendra@ua.edu"
+           style="background:transparent;border:1px solid rgba(255,255,255,0.4);color:#fff;border-radius:6px;padding:7px 18px;text-decoration:none;font-size:0.88rem;">
+          <i class="fa fa-envelope me-1"></i>Contact
+        </a>
+      </div>
+
+      <div class="col-lg-4 order-1 order-lg-2 text-center">
+        <img src="Pic2.png" alt="Pushpendra Raghav" class="profile-img mb-3">
+        <div style="color:rgba(255,255,255,0.65); font-size:0.82rem; line-height:1.6;">
+          <i class="fa fa-map-marker-alt me-1"></i> Tuscaloosa, AL, USA<br>
+          <i class="fa fa-building me-1"></i> Dept. Civil, Construction &amp; Environmental Eng.<br>
+          <i class="fa fa-envelope me-1"></i> ppushpendra@ua.edu<br>
+          <i class="fa fa-phone me-1"></i> 313-742-3251
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ APPOINTMENTS + EDUCATION ═══════════════════════════ -->
+<section id="appointments">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Appointments -->
+      <div class="col-lg-6">
+        <h2 class="section-title"><i class="fa fa-briefcase me-2" style="color:var(--blue)"></i>Appointments</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="role">Research Engineer</div>
+            <div class="org">The University of Alabama, USA &mdash; Dept. Civil, Construction &amp; Environmental Engineering</div>
+            <div class="date">Dec. 2024 &ndash; Present</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">Postdoctoral Associate</div>
+            <div class="org">The University of Alabama, USA &mdash; Dept. Civil, Construction &amp; Environmental Engineering</div>
+            <div class="date">Dec. 2023 &ndash; Dec. 2024</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">Graduate Research Assistant</div>
+            <div class="org">The University of Alabama, USA &mdash; Dept. Civil, Construction &amp; Environmental Engineering</div>
+            <div class="date">Aug. 2019 &ndash; Dec. 2023</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">Junior Research Fellow</div>
+            <div class="org">Indian Institute of Technology Bombay, India &mdash; Climate Studies, Dept. of Civil Engineering</div>
+            <div class="date">June 2018 &ndash; July 2019</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">Graduate Teaching Assistant</div>
+            <div class="org">Indian Institute of Technology Bombay, India &mdash; Water Resources, Dept. of Civil Engineering</div>
+            <div class="date">July 2016 &ndash; June 2018</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="col-lg-6">
+        <h2 class="section-title"><i class="fa fa-graduation-cap me-2" style="color:var(--blue)"></i>Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="role">Ph.D., Civil Engineering (Ecohydrology)</div>
+            <div class="org">The University of Alabama, Tuscaloosa, USA</div>
+            <div style="font-size:0.85rem; color:var(--text); margin-top:2px;">
+              <em>Dissertation:</em> Obtaining Improved Estimates of Soil Moisture, Evapotranspiration, and its Partitions Using Physical Modeling and Big Data Analytics<br>
+              <em>Advisor:</em> Mukesh Kumar
+            </div>
+            <div class="date">Aug. 2019 &ndash; Dec. 2023</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">M.Tech., Civil Engineering (Water Resources Engineering)</div>
+            <div class="org">Indian Institute of Technology Bombay, India</div>
+            <div style="font-size:0.85rem; color:var(--text); margin-top:2px;">
+              <em>Thesis:</em> Investigations on the Hydrological Impacts of Climate Change on River Basin Scale using H08 Hydrological Model<br>
+              <em>Advisor:</em> T.I. Eldho
+            </div>
+            <div class="date">July 2016 &ndash; June 2018</div>
+          </div>
+          <div class="timeline-item">
+            <div class="role">B.Tech., Civil Engineering</div>
+            <div class="org">Dr. A.P.J. Abdul Kalam Technical University, Lucknow, India</div>
+            <div class="date">July 2012 &ndash; June 2016</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ AWARDS ═══════════════════════════ -->
+<section id="awards">
+  <div class="container">
+    <h2 class="section-title"><i class="fa fa-trophy me-2" style="color:var(--blue)"></i>Awards &amp; Honors</h2>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="award-item">
+          <div class="award-name">Travel Grant, AGU Energy Balance Chapman, Boulder, CO, U.S.A.</div>
+          <div class="award-date">Sep 2025</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Outstanding Dissertation Award &mdash; Dept. of Civil, Construction and Environmental Engineering, The University of Alabama, Tuscaloosa, AL</div>
+          <div class="award-date">Apr 2025</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Top rank in the 2016&ndash;18 M.Tech Water Resources Engineering batch &mdash; Dept. of Civil Engineering, Indian Institute of Technology Bombay</div>
+          <div class="award-date">June 2018</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Ministry of Human Resources Development (MHRD, India) Scholarship</div>
+          <div class="award-date">2016&ndash;2018</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">99.3 percentile in Graduate Aptitude Test in Engineering (GATE-2016)</div>
+          <div class="award-date">2016</div>
+        </div>
       </div>
     </div>
 
-    <div class="col-sm-3 text-center">
-      <img src="Pic2.png" alt="Profile Picture" class="img-responsive img-thumbnail" style="width: 60%; height: auto; margin-left: 10px;"">
-      <p style="margin-top: 10px; background-color: rgba(100, 100, 100, 0.2); font-size: 20px; color: white;"><strong>Pushpendra Raghav</strong></p>
+    <!-- Invited Talks -->
+    <h2 class="section-title mt-5"><i class="fa fa-microphone me-2" style="color:var(--blue)"></i>Invited Talks</h2>
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="pub-item">
+          Advancing Measurements and Modeling of Invisible Components of Water Budget: Challenges, Opportunities, and Applications. <strong>American Geophysical Union</strong>, New Orleans, Louisiana, USA. <span class="pub-year">Dec 2025</span>
+        </div>
+        <div class="pub-item">
+          Flux partitioning in wetland systems. <strong>AmeriFlux Annual Meeting</strong>. <span class="pub-year">Oct 2025</span>
+        </div>
+        <div class="pub-item">
+          How Representative Are Ecosystem-Level Evaporative Stress Indices of Vegetation Evaporative Stress? <strong>American Geophysical Union</strong>, Washington, D.C., USA. <span class="pub-year">Dec 2024</span>
+        </div>
+        <div class="pub-item">
+          Evapotranspiration Predictions: Gaps, Challenges, Implications, and the Way Forward. <strong>University of Toledo</strong>, Ohio, USA. <span class="pub-year">Oct 2024</span>
+        </div>
+        <div class="pub-item">
+          Model Performance Diagnostics using Information Theory. <strong>RUBISCO Soil Moisture Working Group &mdash; Benchmarking</strong>. <span class="pub-year">Aug 2024</span>
+        </div>
+        <div class="pub-item">
+          Retrieving Gap-Free Daily Root Zone Soil Moisture Using Surface Flux Equilibrium Theory. <strong>Ohio State University</strong>, Columbus, USA. <span class="pub-year">June 2024</span>
+        </div>
+        <div class="pub-item">
+          Parallel Surrogate Global Optimization for Calibrating Multilayer Community Land Model (CLM-MLv.5). <strong>Ohio State University</strong>, Columbus, USA. <span class="pub-year">June 2024</span>
+        </div>
+        <div class="pub-item">
+          Assessing the impacts of climate change on crop yield in Upper Godavari River Basin using H08 hydrological model. <strong>ISIMIP Cross-Sectoral Workshop</strong>, Paris, France. <span class="pub-year">June 2019</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ RESEARCH GRANTS ═══════════════════════════ -->
+<section id="grants">
+  <div class="container">
+    <h2 class="section-title"><i class="fa fa-dollar-sign me-2" style="color:var(--blue)"></i>Research Grants &amp; Proposals</h2>
+    <div class="row g-3">
+
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="card-title">Machine-Learning-Enhanced Energy and Water Partitioning in the E3SM Land Model over the Southeastern US</div>
+            <span class="badge-status-rev ms-2">Under Review</span>
+          </div>
+          <div class="card-sub">U.S. Department of Energy &mdash; FOA: DE-FOA-0003600 &mdash; <strong>2026</strong></div>
+          <div class="card-sub mt-1">Biological and Environmental Research (BER) Program</div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="card-title">Developing a High-Resolution Root-Zone Soil Moisture Product over CONUS via Surface Flux Equilibrium Theory-Informed Machine Learning</div>
+            <span class="badge-status-rev ms-2">Under Review</span>
+          </div>
+          <div class="card-sub">U.S. Department of Agriculture &mdash; ARS AI Innovation Fund &mdash; <strong>2026</strong></div>
+          <div class="card-sub mt-1">ARS Artificial Intelligence Center of Excellence (AI-COE)</div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="card-title">A Novel Water Use Efficiency-Based Method for Correcting Eddy Covariance Latent Heat Fluxes for Energy Imbalance</div>
+            <span class="badge-status-app ms-2">Approved</span>
+          </div>
+          <div class="card-sub">AGU Chapman Travel Grant &mdash; <strong>2025</strong></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="card-title">Assessment of Evapotranspiration Partitioning Estimates from ECOSTRESS</div>
+            <span class="badge-status-dec ms-2">Declined</span>
+          </div>
+          <div class="card-sub">NASA FINESST &mdash; Proposal No. 21-EARTH21-0320 &mdash; <strong>2022</strong></div>
+          <div class="card-sub mt-1">Overall Score: Very Good</div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="d-flex justify-content-between align-items-start">
+            <div class="card-title">Fine Resolution Mapping of Evapotranspiration from Rain-fed and Irrigation-fed Fields in Alabama</div>
+            <span class="badge-status-dec ms-2">Declined</span>
+          </div>
+          <div class="card-sub">Alabama EPSCoR Graduate Research Scholarship &mdash; <strong>2020</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ PUBLICATIONS ═══════════════════════════ -->
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title"><i class="fa fa-book-open me-2" style="color:var(--blue)"></i>Publications</h2>
+
+    <div class="mb-2" style="font-size:0.85rem; color:var(--muted);">
+      <i class="fa fa-asterisk me-1"></i>Authors contributed equally &nbsp;&nbsp;
+      <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ" target="_blank" class="pub-link me-3"><i class="fa-brands fa-google-scholar me-1"></i>Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" class="pub-link me-3"><i class="fa-brands fa-orcid me-1"></i>ORCID</a>
+      <a href="https://www.researchgate.net/profile/Pushpendra-Raghav" target="_blank" class="pub-link"><i class="fa-brands fa-researchgate me-1"></i>ResearchGate</a>
     </div>
 
-    <div class="col-sm-2"></div>
+    <h5 class="mt-4 mb-3" style="color:var(--navy); font-weight:600;">Peer-Reviewed Journal Papers</h5>
+
+    <!-- ── Published ── -->
+    <p class="text-muted mb-2" style="font-size:0.83rem; text-transform:uppercase; letter-spacing:0.5px;">Published</p>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Salvi, K., <strong>Raghav, P.</strong>, Kumar, M., Magliocca, N., &amp; Bisht, G. (<span class="pub-year">2026</span>). Discrepancy in the Sign of Temperature Trends in Reanalysis Datasets. <em>Environmental Research Letters</em> (In Production).
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2026</span>). How well does the Evaporative Stress Index from ECOSTRESS Capture Site-Based Stresses? <em>Canadian Journal of Remote Sensing, 52</em>(1).
+      <a href="https://doi.org/10.1080/07038992.2026.2645742" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2025</span>). Surface Flux Equilibrium Theory-Derived Evapotranspiration Estimate Outperforms ECOSTRESS, MODIS, and SSEBop products. <em>Geophysical Research Letters, 52</em>(10), e2025GL114822.
+      <a href="https://doi.org/10.1029/2025GL114822" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Ghaseminejad, A., Bhat, N., <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2025</span>). Influence of Interannual Leaf Phenology Dynamics on Evapotranspiration Predictions. <em>Journal of Hydrometeorology, 26</em>, 259&ndash;272.
+      <a href="https://doi.org/10.1175/JHM-D-24-0061.1" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2024</span>). Are the ecosystem-level evaporative stress indices representative of evaporative stress of vegetation? <em>Agricultural and Forest Meteorology, 357</em>, 110195.
+      <a href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, Kumar, M., &amp; Liu, Y. (<span class="pub-year">2024</span>). Structural constraints in current stomatal conductance models preclude accurate prediction of evapotranspiration. <em>Water Resources Research, 60</em>(8), e2024WR037652.
+      <a href="https://doi.org/10.1029/2024WR037652" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Rathore, L. S., Hanasaki, N., Kumar, M., Mekonnen, M., &amp; <strong>Raghav, P.</strong> (<span class="pub-year">2023</span>). Water scarcity challenges across urban regions with expanding irrigation. <em>Environmental Research Letters, 19</em>(1), 014065.
+      <a href="https://doi.org/10.1088/1748-9326/ad178a" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, &amp; Eldho, T.I. (<span class="pub-year">2023</span>). Investigations on the hydrological impacts of climate change on a river basin using macroscale model H08. <em>Journal of Earth System Science, 132</em>(2), 87.
+      <a href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong><sup>*</sup>, Kumar, M., &amp; Gunter, A.G. (<span class="pub-year">2022</span>). Influence of water use efficiency parameterizations on flux variance similarity-based partitioning of evapotranspiration. <em>Agricultural and Forest Meteorology, 328</em>, 109254.
+      <a href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, Wagle, P., Kumar, M., Banerjee, T., &amp; Neel, J.P.S. (<span class="pub-year">2022</span>). Vegetation Index-Based Partitioning of Evapotranspiration Is Deficient in Grazed Systems. <em>Water Resources Research, 58</em>(8), e2022WR032067.
+      <a href="https://doi.org/10.1029/2022WR032067" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2021</span>). Retrieving gap-free daily root zone soil moisture using surface flux equilibrium theory. <em>Environmental Research Letters, 16</em>(10), 104007.
+      <a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, Borkotoky, S.S., Joseph, J., Chattopadhyay, R., Sahai, A.K., &amp; Ghosh, S. (<span class="pub-year">2020</span>). Revamping extended range forecast of Indian summer monsoon. <em>Climate Dynamics, 55</em>, 3397&ndash;3411.
+      <a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
+    <!-- ── Under Review / Revision ── -->
+    <p class="text-muted mb-2 mt-4" style="font-size:0.83rem; text-transform:uppercase; letter-spacing:0.5px;">Under Review / Revision</p>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Revision</span><br>
+      <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2026</span>). A Novel Water Use Efficiency-Based Method for Correcting Eddy Covariance-Measured Latent Heat Fluxes for Energy Imbalance. <em>Water Resources Research</em>.
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Revision</span><br>
+      <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2026</span>). Dynamic Parameterization of Priestley-Taylor Coefficient for a More Accurate Potential Evapotranspiration Estimation in Ungauged Regions. <em>Environmental Research Letters</em>.
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Review</span><br>
+      <strong>Raghav, P.</strong>, Liu, Y., Kumar, M., &amp; Bisht, G. (<span class="pub-year">2026</span>). Multilayer canopy model outperforms big-leaf model for evapotranspiration predictions under high water and heat stress conditions. <em>Journal of Advances in Modeling Earth Systems</em>.
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Review</span><br>
+      Wolkeba, F.T., Kumar, M., <strong>Raghav, P.</strong>, &amp; Thakur, H. (<span class="pub-year">2025</span>). CALFRET: A high-performing, CALibration-FRee 1-km EvapoTranspiration product over the conterminous USA.
+      <a href="https://doi.org/10.22541/essoar.175915560.04888321/v1" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> Preprint</a>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Review</span><br>
+      Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2026</span>). Benchmark data of root zone soil moisture over the conterminous USA based on vegetation-specific rooting depths. <em>Vadose Zone Journal</em>.
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-rev">In Review</span><br>
+      Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong>, Kumar, M., Scanlon, T.M., Northup, B.K., Moffet, C., Gunter, S., &amp; Xiao, X. Partitioning Evapotranspiration in C3&ndash;C4 Mixed Tallgrass Prairies. <em>Agricultural Water Management</em>.
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-badge badge-prep">In Preparation</span><br>
+      <strong>Raghav, P.</strong>, &amp; Kumar, M. (<span class="pub-year">2026</span>). Large Underestimation of Flash Drought Events in Reanalysis Data. <em>Geophysical Research Letters</em>.
+    </div>
+
+    <!-- Book Chapter -->
+    <h5 class="mt-4 mb-3" style="color:var(--navy); font-weight:600;">Book Chapter</h5>
+    <div class="pub-item">
+      <span class="pub-badge badge-pub">Published</span><br>
+      <strong>Raghav, P.</strong>, &amp; Eldho, T.I. (<span class="pub-year">2021</span>). Assessing the Impacts of Climate Change on Crop Yield in Upper Godavari River Subbasin Using H08 Hydrological Model. <em>Climate Change Impacts on Water Resources: Hydraulics, Water Resources and Coastal Engineering</em>, 193&ndash;205.
+      <a href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank" class="pub-link ms-1"><i class="fa fa-external-link-alt"></i> DOI</a>
+    </div>
+
   </div>
-</div>
+</section>
 
+<!-- ═══════════════════════════ SOFTWARE & DATASETS ═══════════════════════════ -->
+<section id="software">
+  <div class="container">
+    <h2 class="section-title"><i class="fa fa-code me-2" style="color:var(--blue)"></i>Software &amp; Datasets</h2>
+    <div class="row g-3">
 
-<div class="row" style="background-color:lightgray;padding-top:60px;padding-bottom: 60px;" id="cv">
-	<div class="col-sm-2" ></div>
-    <div class="col-sm-8" >
-      
-	  <div class="row">
-        <div class="col-sm-2"><b>Education</b></div>
-        <div class="col-sm-8"><p> <b>The University of Alabama</b></br>Ph.D, Hydrology<br>Obtaining Improved Estimates of Soil Moisture, Evapotranspiration and its Components using Physical Modeling and Big Data Analysis.</p></div>
-        <div class="col-sm-2">2019-2023</div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Evaluating multilayer and big-leaf canopy models for ET under water and heat stress</div>
+          <div class="card-sub">Zenodo &mdash; <strong>Jan 2026</strong></div>
+        </div>
       </div>
-	  <div class="row"> </div>
-	  <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b> Indian Institute of Technology Bombay</b></br>M.Tech, Water Resource Engineering<br>Investigated the overall hydrology of Godavari river basin in response to future climate change using H08 hydrological model. Also developed a statistical tool for revamping extended range forecast of Indian Summer Monsson Rainfall (ISMR).</p></div>
-        <div class="col-sm-2">2016-2018</div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Dynamic Parameterization of Priestley-Taylor Coefficient for Potential ET Estimation in Ungauged Regions</div>
+          <div class="card-sub">Zenodo &mdash; <strong>Nov 2025</strong></div>
+        </div>
       </div>
-	  <div class="row"> </div>
-
-	  <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b> Dr. A.P.J. Abdul Kalam Technical University, Lucknow, India</b></br>B.Tech, Civil Engineering <br>Performed an experiment to obtain Manning's and Chezzy's constants for different materials.</p></div>
-        <div class="col-sm-2">2012-2016</div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">PULSE: Correcting Latent Heat Flux Measurements for Energy Imbalance at Eddy Covariance Flux Tower Sites</div>
+          <div class="card-sub">Zenodo &mdash; <strong>Oct 2025</strong></div>
+        </div>
       </div>
-	  
-	</div>
-    <div class="col-sm-2" ></div>
-</div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Water Flux Partitioning using Flux Variance Similarity Theory in Wetland Settings</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> &mdash; <strong>Oct 2025</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Guide to download and process remote sensing data in R</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> &mdash; <strong>Apr 2025</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Information Theory-based Model Performance Diagnostics</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> &mdash; <strong>Aug 2024</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Ecosystem-scale Transpiration from SAPFLUXNET Database</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> &mdash; <strong>Apr 2024</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Water Flux Partitioning using High Frequency EC Data</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> / Zenodo &mdash; <strong>Aug 2023</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Physical and Machine Learning Models of Stomatal Conductance for ET Prediction</div>
+          <div class="card-sub">Zenodo &mdash; <strong>Mar 2023</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Water Flux Partitioning Data in Disturbed (Grazed) Wheat Systems</div>
+          <div class="card-sub"><a href="https://doi.org/10.15482/USDA.ADC/1527834" target="_blank" class="pub-link">USDA-ADC</a> &mdash; <strong>Aug 2022</strong></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card">
+          <div class="card-title">Step-by-step Guide for Gap Filling Eddy Covariance Data and NEE Flux Partitioning</div>
+          <div class="card-sub"><a href="https://github.com/praghav444" target="_blank" class="pub-link">GitHub</a> &mdash; <strong>2022</strong></div>
+        </div>
+      </div>
 
-<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 60px;">
-	<div class="col-sm-2" ></div>
-    <div class="col-sm-8" >
-      <div class="row">
-        <h2><strong><span style="text-transform:uppercase;">Appointments</span></strong></h2>
-<hr>
+    </div>
 
-<div style="margin-bottom: 1em;">
-  <div style="display: flex; justify-content: space-between;">
-    <div><strong>Research Engineer</strong>, The University of Alabama, USA</div>
-    <div><em>Dec. 2024 – Present</em></div>
+    <!-- Technical Expertise -->
+    <h2 class="section-title mt-5"><i class="fa fa-laptop-code me-2" style="color:var(--blue)"></i>Technical Expertise</h2>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="card-title">Earth System Models</div>
+          <div class="card-sub">ELM (E3SM) &middot; CLM &middot; H08 &middot; VIC &middot; SWMM &middot; ILAMB</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="card-title">Programming Languages</div>
+          <div class="card-sub">Python &middot; R &middot; MATLAB &middot; Fortran &middot; LaTeX &middot; Bash</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="card-title">Geospatial &amp; Visualization</div>
+          <div class="card-sub">GEE &middot; ArcGIS &middot; QGIS &middot; GMT &middot; Matplotlib &middot; ggplot &middot; folium</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-card">
+          <div class="card-title">Key Packages / Libraries</div>
+          <div class="card-sub">xarray &middot; dask-ml &middot; h5py &middot; rasterio &middot; geopandas &middot; earthengine-api &middot; cartopy &middot; Keras/TensorFlow &middot; PyTorch</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-card">
+          <div class="card-title">Computing</div>
+          <div class="card-sub">HPC &middot; Linux &middot; Windows &middot; GDB &middot; Parallel computing</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>Department of Civil, Construction, &amp; Environmental Engineering</div>
-</div>
+</section>
 
-<div style="margin-bottom: 1em;">
-  <div style="display: flex; justify-content: space-between;">
-    <div><strong>Postdoctoral Associate</strong>, The University of Alabama, USA</div>
-    <div><em>Dec. 2023 – Dec. 2024</em></div>
+<!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title"><i class="fa fa-flask me-2" style="color:var(--blue)"></i>Selected Research Projects</h2>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/corr_plot_weekly.png" alt="Extended range forecast">
+          <div class="proj-body">
+            <strong>Extended-Range Rainfall Forecasting:</strong> Improving dynamical model (ERPAS) skills for 4-week rainfall prediction using machine learning (SDM).
+            <br><a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank"><em>Climate Dynamics</em>, 2020</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/CropYield_2021.png" alt="Crop yield climate change">
+          <div class="proj-body">
+            <strong>Crop Yield Under Climate Change:</strong> How water and temperature stresses under RCP4.5 affect C3 (Wheat) and C4 (Sorghum, Millet) crop yields.
+            <br><a href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank"><em>Climate Change Impacts on Water Resources</em>, 2021</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/ERL_SM.jpeg" alt="Root-zone soil moisture">
+          <div class="proj-body">
+            <strong>Gap-Free Root-Zone Soil Moisture:</strong> Generating continuous spatiotemporal maps of root-zone soil moisture using Surface Flux Equilibrium Theory.
+            <br><a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank"><em>Environmental Research Letters</em>, 2021</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/ET_Partitioning_EVI_2022.PNG" alt="ET partitioning grazed systems">
+          <div class="proj-body">
+            <strong>ET Partitioning in Disturbed Systems:</strong> How disturbance (grazing) in a natural ecosystem affects evapotranspiration partitioning.
+            <br><a href="https://doi.org/10.1029/2022WR032067" target="_blank"><em>Water Resources Research</em>, 2022</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/Fig3_AFM1.jpg" alt="WUE parameterization">
+          <div class="proj-body">
+            <strong>WUE Parameterization &amp; ET Partitioning:</strong> How leaf-level water use efficiency parameterization affects flux variance similarity-based ET partitioning.
+            <br><a href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank"><em>Agricultural and Forest Meteorology</em>, 2022</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="proj-card">
+          <img src="./Figures/JESS_Fig7.png" alt="Climate change hydrology India">
+          <div class="proj-body">
+            <strong>Future Hydroclimatology:</strong> Projections of hydroclimatological variables under high carbon emission scenarios in the Upper Godavari River Sub-Basin.
+            <br><a href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank"><em>Journal of Earth System Science</em>, 2023</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div>Department of Civil, Construction, &amp; Environmental Engineering</div>
-</div>
+</section>
 
-<div style="margin-bottom: 1em;">
-  <div style="display: flex; justify-content: space-between;">
-    <div><strong>Graduate Research Assistant</strong>, The University of Alabama, USA</div>
-    <div><em>Aug. 2019 – Dec. 2023</em></div>
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="section-title">Contact</h2>
+        <p style="color:rgba(255,255,255,0.75); font-size:0.95rem;">Feel free to reach out for collaborations, questions about my research, or any inquiries.</p>
+        <div style="font-size:0.92rem; line-height:2.2;">
+          <div><i class="fa fa-user contact-icon"></i> Pushpendra Raghav
+            <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" style="margin-left:6px;">
+              <img src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" alt="ORCID" width="14" height="14">
+            </a>
+          </div>
+          <div><i class="fa fa-building contact-icon"></i> Research Engineer, Dept. of Civil, Construction &amp; Environmental Engineering</div>
+          <div><i class="fa fa-university contact-icon"></i> The University of Alabama, Tuscaloosa, AL 35401, USA</div>
+          <div><i class="fa fa-map-marker-alt contact-icon"></i> Office 1033, Cyber Hall, 248 Kirkbride Ln</div>
+          <div><i class="fa fa-envelope contact-icon"></i> <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a></div>
+          <div><i class="fa fa-phone contact-icon"></i> +1 313-742-3251</div>
+        </div>
+        <div class="mt-4">
+          <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ" target="_blank" class="social-icon" title="Google Scholar"><i class="fa-brands fa-google-scholar fa-lg"></i></a>
+          <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" class="social-icon" title="ORCID"><i class="fa-brands fa-orcid fa-lg"></i></a>
+          <a href="https://github.com/praghav444" target="_blank" class="social-icon" title="GitHub"><i class="fa-brands fa-github fa-lg"></i></a>
+          <a href="https://www.linkedin.com/in/praghav444" target="_blank" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+          <a href="https://twitter.com/Pushpen41145869" target="_blank" class="social-icon" title="Twitter/X"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+          <a href="https://www.researchgate.net/profile/Pushpendra-Raghav" target="_blank" class="social-icon" title="ResearchGate"><i class="fa-brands fa-researchgate fa-lg"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1 mt-4 mt-lg-0">
+        <h5 style="color:rgba(255,255,255,0.85); font-weight:600;">Professional Service</h5>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem; margin-bottom:6px;"><strong style="color:rgba(255,255,255,0.8);">Journal Reviewer:</strong><br>
+          Water Resources Research &middot; JGR-Atmosphere &middot; JGR-Biogeosciences &middot;<br>
+          Remote Sensing of Environment &middot; Journal of Hydrology &middot; Journal of Water and Climate Change
+        </p>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem;"><strong style="color:rgba(255,255,255,0.8);">Member &amp; Research Communities:</strong><br>
+          American Geophysical Union (AGU) &middot; The Ecological Society of America &middot;<br>
+          The Indian Society for Hydraulics &middot; Alabama Water Institute
+        </p>
+        <hr style="border-color:rgba(255,255,255,0.15);">
+        <h5 style="color:rgba(255,255,255,0.85); font-weight:600;">Teaching &amp; Mentorship</h5>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.88rem;">
+          Instructor for Process Hydrology (CEE-491/591), UA (2023&ndash;2024)<br>
+          Graduate Teaching Assistant, IIT Bombay (2016&ndash;2018); supervised 120+ students<br>
+          Mentoring Ph.D. student Hitesh P. Thakur (Aug 2024&ndash;present)
+        </p>
+      </div>
+    </div>
   </div>
-  <div>Department of Civil, Construction, &amp; Environmental Engineering</div>
-</div>
+</section>
 
-<div style="margin-bottom: 1em;">
-  <div style="display: flex; justify-content: space-between;">
-    <div><strong>Junior Research Fellow</strong>, Indian Institute of Technology Bombay, India</div>
-    <div><em>June 2018 – July 2019</em></div>
-  </div>
-  <div>Climate Studies, Department of Civil Engineering</div>
-</div>
-
-<div style="margin-bottom: 1em;">
-  <div style="display: flex; justify-content: space-between;">
-    <div><strong>Graduate Teaching Assistant</strong>, Indian Institute of Technology Bombay</div>
-    <div><em>July 2016 – June 2018</em></div>
-  </div>
-  <div>Water Resources, Department of Civil Engineering</div>
-</div>
-
-	      
-<div class="row" style="background-color:lightgray;;padding-top:60px;padding-bottom: 60px;" id="pubs">
-	<div class="col-sm-2" ></div>
-    <div class="col-sm-8" >
-      <div class="row">
-        <div class="col-sm-2"><b>Publications</b></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Kumar, M., Liu, Y. (2023). Machine learning shows significant potential for the improvement of current stomatal conductance models. Manuscript under review at <em>Nature Communications</em>. <a href="https://doi.org/10.21203/rs.3.rs-2694012/v1" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-	<div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-      <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p>Rathore, L. S., Hanasaki, N., Kumar, M., Mekonnen, M., & <b>Raghav, P.</b> (2023). Water scarcity challenges across urban regions with expanding irrigation.” <em>Environmental Research Letters, 16</em>(10), 104007. <a href="http://dx.doi.org/10.1088/1748-9326/ad178a" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-	<div class="col-sm-2"></div>
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p>Wagle, P., <b>Raghav, P.</b>, Kumar, M., & Gunter, S. A. (2023). Influence of water use efficiency parameterizations on flux variance similarity-based partitioning of evapotranspiration. <em>Agricultural and Forest Meteorology, 328</em>(13), 109254. <a href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-	</div>
-	<div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, & Eldho, T. I. (2023). Investigations on the hydrological impacts of climate change on a river basin using macroscale model H08. <em>Journal of Earth System Science, 132</em>(2), 1-23. <a href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-	</div>
-	<div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Wagle, P., Kumar, M., Banerjee, T., & Neel, J. (2022). Vegetation Index-Based Partitioning of Evapotranspiration Is Deficient in Grazed Systems. <em>Water Resources Research, 58</em>(8). <a href="https://doi.org/10.1029/2022WR032067" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-	</div>
-	<div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, & Kumar, M. (2021). Retrieving gap-free daily root zone soil moisture using Surface Flux Equilibrium theory. <em>Environmental Research Letters, 16</em>(10), 104007. <a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-	</div>
-	  <div class="row">
-	<div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Borkotoky, S. S., Joseph, J., Chattopadhyay, R., Sahai, A. K., & Ghosh, S. (2020). Revamping extended range forecast of Indian summer monsoon. <em>Climate Dynamics, 55</em>(11), 3397-3411. <a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"><b>Conferences</b></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, & Kumar, M. (2022, December). Assessing evapotranspiration partitioning obtained using land surface models across varied ecosystems. In AGU Fall Meeting 2022. AGU.</p></div>
-        <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p>Ghaseminejad, A., Bhat, M., <b>Raghav, P.</b>, & Kumar, M. (2022, December). Machine Learning-Driven Temporal Downscaling of Groundwater Recharge Estimates to Obtain Event-Based Response. In AGU Fall Meeting 2022. AGU.</p></div>
-        <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p>Rathore, L. S., Hanasaki, N., Kumar, M., Mekonnen, M., & <b>Raghav, P.</b> (2022, December). Rain-fed to Irrigation-fed Transition of Cropped Agriculture may Enhance Urban-Rural Water Conflict. In AGU Fall Meeting 2022. AGU.</p></div>
-        <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p>Wagle, P., <b>Raghav, P.</b>, & Kumar, M. (2022, December). Sensitivity of Water Use Efficiency Parameterizations on Flux Variance Similarity-based Partitioning of Evapotranspiration. In AGU Fall Meeting 2022. AGU.</p></div>
-        <div class="col-sm-2"></div>
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"></div>
-	<div class="col-sm-8"><p><b>Raghav, P.</b>, & Kumar, M. (2021, December). Are canonical relations to partition evapotranspiration valid for managed systems?. In AGU Fall Meeting Abstracts (Vol. 2021, pp. B12B-02). <a href="https://ui.adsabs.harvard.edu/abs/2021AGUFM.B12B..02R/abstract" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"></div>
-	<div class="col-sm-8"><p>Kumar, M., & <b>Raghav, P.</b> (2021, December). Obtaining daily root zone soil moisture using a calibration-free approach. In AGU Fall Meeting Abstracts (Vol. 2021, pp. H55C-0777). <a href="https://ui.adsabs.harvard.edu/abs/2021AGUFM.H55C0777K/abstract" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, & Eldho, T. I. (2019). Investigations on the impacts of future climate change on the hydrology of a river basin in India using a macroscale hydrological model. <em>In 11th World Congress on Water Resources and Environment: Managing Water Resources for a Sustainable Future-EWRA 2019. Proceedings</em>. <a href="https://inis.iaea.org/search/search.aspx?orig_q=RN:52098627" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-			     
-      </div>
-	  <div class="row">
-        <div class="col-sm-2"><b>Book Chapter</b></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, & Eldho, T.I. (2021). Assessing the Impacts of Climate Change on Crop Yield in Upper Godavari River Subbasin Using H08 Hydrological Model. <em>Climate Change Impacts on Water Resources: Hydraulics, Water Resources and Coastal Engineering</em>, 193-205. <a href="https://link.springer.com/chapter/10.1007/978-3-030-64202-0_18" target="_blank"><img src="Link_Icon.png" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-      </div>		     
-	  <div class="row">
-        <div class="col-sm-2"><b>Datasets</b></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Wagle, P., Kumar, M., Banerjee, T., & Neel, J. (2022). Data from: Vegetation index-based partitioning of evapotranspiration is deficient in grazed systems. <em>Ag Data Commons</em>. <a href="https://doi.org/10.15482/USDA.ADC/1527834" target="_blank"><img src="download_icon.jpeg" style="width:25px;height:25px;"></img></a></p></div>
-        <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Singh, J., & Ghosh, S. (2019). Regional climate projections in India with statistical downscaling. <a href="http://www.regclimindia.in" target="_blank"><img src="download_icon.jpeg" style="width:25px;height:25px;"></img></a> (Contact Prof. Subimal Ghosh at <u>subimal@civil.iitb.ac.in</u> if having any difficulty in downloading the dataset.)</p></div>
-        <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8"><p><b>Raghav, P.</b>, Kumar, M., & Liu, Y. (2023). Structural constraints in current stomatal conductance models preclude accurate estimation of evapotranspiration and its partitions (1.0.0). <a href="https://zenodo.org/record/7768479" target="_blank"><img src="download_icon.jpeg" style="width:25px;height:25px;"></img></a> </p></div>
-        <div class="col-sm-2"></div>
-      </div>
-     
-	
-	  
-	</div>
-	<div class="col-sm-2" ></div>
-</div>
-
-
-
-<div class="row" style="background-color:lightgray;padding-top:60px;padding-bottom:60px" id="awards">
-	<div class="col-sm-2" ></div>
-    <div class="col-sm-8" >
-      <div class="row">
-        <div class="col-sm-2"><b>Academic Achievements</b></div>
-        <div class="col-sm-8">
-		<p>
-		Secured an All India Rank of 745 in Graduate Aptitude Test in Engineering (GATE) exam.<br>
-		</p></div>
-        <div class="col-sm-2"></div>
-
-      </div>	  
-	</div>
-	<div class="col-sm-2" ></div>
-</div>
-
-
-<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 20px;" id="Proj">
-<div class="col-sm-1" ></div>												 
-		     <div class="col-sm-2"><b>Selected Projects</b></div> </div>
-	<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 20px;" id="Projjj">
-		<div class="col-sm-1" ></div>			  
-		     
-		   <div class="col-sm-3">
-				<img width='100%' height='100%'  src='./Figures/corr_plot_weekly.png'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>Improving the skills of dynamical (physics-based) models (ERPAS) for extented range forecast of rainfall (up to four weeks) using assemblage of machine learning techniques (SDM).</b> (<u>2020</u>@<a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank"> <em>ClimDyna</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     <div class="col-sm-3">
-				<img width='120%' height='120%'  src='./Figures/CropYield_2021.png'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>C3 crop (Winter Wheat) is in danger under future climate change! How water and temperature stresses under future climate change (RCP4.5) affect the yield of C3 crop (Wheat) and C4 crops (Sorghum and Millet)?</b> (<u>2021</u>@<a href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank"> <em>ClimChange</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     </div>
-<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 20px;" id="Projjjj">
-<div class="col-sm-1" ></div>			     
-		   <div class="col-sm-4">
-				<img width='100%' height='100%'  src='./Figures/ERL_SM.jpeg'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>Generating continuous (both in time and space) maps of root-zone soil moisture using Surface Flux Equilibrium Theory.</b> (<u>2021</u>@<a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank"> <em>ERL</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     <div class="col-sm-3">
-				<img width='120%' height='120%'  src='./Figures/ET_Partitioning_EVI_2022.PNG'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>How disturbance in a natural system affects evapotranspiration partitioning?</b> (<u>2022</u>@<a href="https://doi.org/10.1029/2022WR032067" target="_blank"> <em>WRR</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     </div>					     
-
-
-<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 20px;" id="Projjjjj">
-<div class="col-sm-1" ></div>					  
-		     
-		   <div class="col-sm-5">
-				<img width='120%' height='120%'  src='./Figures/Fig3_AFM1.jpg'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>How parameterization of leaf-level water use efficiency affects the Flux Variance Similarity-based evapotranspiration partitioning?</b> (<u>2022</u>@<a href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank"> <em>AFM</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     </div>					     
-<div class="row" style="background-color:white;;padding-top:60px;padding-bottom: 20px;" id="Projjjjj">
-<div class="col-sm-1" ></div>					  
-		     
-		   <div class="col-sm-5">
-				<img width='120%' height='120%'  src='./Figures/JESS_Fig7.png'></img>
-				<p style="background-color:white;font-size:12px;color:black"><b>Future projection of different hydro-climatological variables under high carbon emission scenario in UGRSB.</b> (<u>2023</u>@<a href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank"> <em>JESS</em></a>)<br>
-				<text style="background-color:white;font-size:12px;color:white"></text>
-			</div>
-			<div class="col-sm-1"></div> 
-					     </div>					     
-					     
-<footer class="container-fluid text-center">
-  <p>
-  <h3> Contact</h3>
-  Pushpendra Raghav<a href="https://orcid.org/0000-0002-2982-069X"  target="_blank"><img src="https://info.orcid.org/wp-content/uploads/2020/12/orcid_16x16.gif" alt="iD icon" width="16" height="16" border="0"> </a><br>
-  Email: ppushpendra@ua.edu<br>
-  Mobile: +1 313-742-3251<br>
-  
-  <a href="https://twitter.com/Pushpen41145869"  target="_blank"><i class="fa fa-twitter-square" style="font-size:36px;color:#2c3e50;"></i></a>
-  <a href="https://github.com/praghav444"  target="_blank"><i class="fa fa-github-square" style="font-size:36px;color:#2c3e50;"></i></a>
-  <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ&hl=en&oi=ao"  target="_blank"><i class="fa fa-graduation-cap" style="font-size:36px;color:#2c3e50;"></i></a>															       
-  <a href="https://www.linkedin.com/in/praghav444"  target="_blank"><i class="fa fa-linkedin-square" style="font-size:36px;color:#2c3e50"></i></a>&nbsp;
- <!-- <a href="https://orcid.org/0000-0002-2982-069X"><img src="https://orcid.org/sites/default/files/images/orcid_16x16(1).gif" alt="iD icon" width="16" height="16" border="0"> </a> -->
- 
-  </p>
+<footer>
+  &copy; 2025 Pushpendra Raghav &mdash; The University of Alabama
 </footer>
 
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
