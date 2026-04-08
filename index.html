@@ -666,6 +666,8 @@
     .sec-title { font-size:1.5rem; }
     .gallery-grid { grid-template-columns:1fr 1fr; }
     .sig-items { flex-direction:column; }
+    .highlight-card[style*="flex-direction:row"] { flex-direction:column !important; }
+    .highlight-card [style*="min-width:320px"] { min-width:unset !important; max-width:unset !important; width:100% !important; }
   }
   @media(max-width:480px) {
     .gallery-grid { grid-template-columns:1fr; }
@@ -1373,30 +1375,126 @@
 
     </div><!-- /row -->
 
-    <!-- AFM 2024 highlight (wider card) -->
+    <!-- AFM 2024 highlight — 7th card with styled key-findings visual -->
     <div class="row g-4 mt-1">
-      <div class="col-12 reveal">
-        <div class="highlight-card" style="flex-direction:row;display:flex;align-items:stretch;">
-          <div class="highlight-img-wrap" style="min-width:320px;max-width:360px;flex-shrink:0;height:auto;">
-            <img src="Figures/Fig3_AFM1.jpg" alt="Evaporative Stress Index"
-                 style="height:100%;min-height:200px;"
-                 data-caption="Raghav &amp; Kumar (2024), Agricultural &amp; Forest Meteorology — Ecosystem-level evaporative stress indices are not representative of vegetation stress."
-                 onclick="openLightbox(this.parentElement)">
-            <div class="highlight-overlay" onclick="openLightbox(this.parentElement)">
-              <span class="highlight-overlay-text"><i class="fa fa-expand me-1"></i>Enlarge</span>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="highlight-card">
+          <!-- Styled visual placeholder showing key finding stats -->
+          <div class="highlight-img-wrap" style="cursor:default;background:linear-gradient(135deg,#0d1b2a 0%,#1a3550 100%);">
+            <div style="height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:1rem;">
+              <div style="font-size:2.8rem;color:#3fa9d6;font-weight:700;font-family:'Playfair Display',serif;line-height:1;">20–35%</div>
+              <div style="font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.5;">ESI overestimation of vegetation stress<br>in dryland &amp; savanna ecosystems</div>
+              <div style="display:flex;gap:1rem;margin-top:.5rem;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8b86d;font-weight:700;">500+</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Flux Sites</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#6ecfb0;font-weight:700;">10+</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Ecosystem Types</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8846e;font-weight:700;">5</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Stress Indices</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="highlight-body" style="border-left:1px solid var(--mid);">
-            <div class="highlight-journal"><i class="fa fa-journal-whills me-1"></i>Agricultural &amp; Forest Meteorology · 2024 &nbsp;·&nbsp; <span class="pub-badge b-fa">First Author</span></div>
+          <div class="highlight-body">
+            <div class="highlight-journal"><i class="fa fa-journal-whills me-1"></i>Agricultural &amp; Forest Meteorology · 2024 &nbsp;·&nbsp; <span class="pub-badge b-fa">FA</span></div>
             <div class="highlight-title">Are Ecosystem-Level Evaporative Stress Indices Representative of Vegetation Evaporative Stress?</div>
             <div class="highlight-summary">
-              The Evaporative Stress Index (ESI) derived from remote sensing is widely used to detect vegetation water stress and trigger drought early warnings. However, ESI is computed at the ecosystem level, conflating plant transpiration stress with soil evaporation. This study compared ESI against direct vegetation stress metrics across multiple ecosystem types and climate zones, revealing systematic biases in ecosystems where soil evaporation dominates or where vegetation density is low.
+              The Evaporative Stress Index (ESI) from ECOSTRESS and other satellites triggers drought early warnings globally. However, ESI conflates plant stress with soil evaporation. We compared ESI against direct vegetation stress metrics across 500+ FLUXNET sites, finding systematic biases in dryland and savanna ecosystems.
             </div>
             <div class="highlight-finding">
-              Key finding: ESI overestimates vegetation stress by 20–35% in dryland and savanna ecosystems due to high soil evaporation fractions, leading to false drought alarms in food-insecure regions that depend on early warning systems.
+              Key finding: ESI-based drought alerts in food-insecure drylands may be 20–35% inflated — potentially redirecting limited humanitarian resources and eroding trust in satellite-based monitoring tools.
             </div>
             <div class="highlight-links">
               <a href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" class="pub-doi"><i class="fa fa-link me-1"></i>DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRL 2025 — Thakur, Raghav et al. -->
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="highlight-card">
+          <div class="highlight-img-wrap" style="cursor:default;background:linear-gradient(135deg,#1a3550 0%,#0d2d1a 100%);">
+            <div style="height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:1rem;">
+              <div style="font-size:2.4rem;color:#6ecfb0;font-weight:700;font-family:'Playfair Display',serif;line-height:1;">SFE-ET</div>
+              <div style="font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.5;">Outperforms ECOSTRESS, MODIS &amp; SSEBop<br>across CONUS flux sites</div>
+              <div style="display:flex;gap:1rem;margin-top:.5rem;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#3fa9d6;font-weight:700;">CONUS</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Coverage</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8b86d;font-weight:700;">1 km</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Resolution</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8846e;font-weight:700;">Zero</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Calibration</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="highlight-body">
+            <div class="highlight-journal"><i class="fa fa-journal-whills me-1"></i>Geophysical Research Letters · 2025</div>
+            <div class="highlight-title">Surface Flux Equilibrium Theory-Derived ET Outperforms ECOSTRESS, MODIS, and SSEBop</div>
+            <div class="highlight-summary">
+              Satellite ET products from ECOSTRESS, MODIS, and SSEBop are widely used for irrigation management and drought monitoring. We developed a new calibration-free ET product using Surface Flux Equilibrium theory and evaluated it against leading satellite products across all AmeriFlux sites in CONUS.
+            </div>
+            <div class="highlight-finding">
+              Key finding: SFE-based ET achieves higher accuracy than all major operational ET products with no site-specific calibration — demonstrating superior performance especially under water and heat stress conditions.
+            </div>
+            <div class="highlight-links">
+              <a href="https://doi.org/10.1029/2025GL114822" target="_blank" class="pub-doi"><i class="fa fa-link me-1"></i>DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indian Summer Monsoon -->
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="highlight-card">
+          <div class="highlight-img-wrap" style="cursor:default;background:linear-gradient(135deg,#1a2a00 0%,#2d4400 100%);">
+            <div style="height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;gap:1rem;">
+              <div style="font-size:2rem;color:#b8e86d;font-weight:700;font-family:'Playfair Display',serif;line-height:1;text-align:center;">Extended<br>Range</div>
+              <div style="font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;line-height:1.5;">Indian Summer Monsoon<br>Forecast Improvement</div>
+              <div style="display:flex;gap:1rem;margin-top:.5rem;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#3fa9d6;font-weight:700;">2–4 wk</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">Lead Time</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8b86d;font-weight:700;">↑ Skill</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">vs. Baseline</div>
+                </div>
+                <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.3rem;color:#e8846e;font-weight:700;">1.3B</div>
+                  <div style="font-size:.68rem;color:rgba(255,255,255,.45);">People Impacted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="highlight-body">
+            <div class="highlight-journal"><i class="fa fa-journal-whills me-1"></i>Climate Dynamics · 2020</div>
+            <div class="highlight-title">Revamping Extended-Range Forecast of Indian Summer Monsoon</div>
+            <div class="highlight-summary">
+              The Indian Summer Monsoon delivers 80% of India's annual rainfall, sustaining agriculture for over a billion people. Extended-range forecasts (2–4 weeks ahead) are critical for water management, yet skill remains limited. This study proposed a new statistical-dynamical framework that significantly improves forecast skill.
+            </div>
+            <div class="highlight-finding">
+              Key finding: The revamped framework reduces forecast errors by incorporating Madden-Julian Oscillation teleconnections and improved sea surface temperature boundary conditions, offering actionable lead times for agricultural planning.
+            </div>
+            <div class="highlight-links">
+              <a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" class="pub-doi"><i class="fa fa-link me-1"></i>DOI</a>
             </div>
           </div>
         </div>
@@ -1934,12 +2032,32 @@
 
       <div class="col-lg-7 reveal-right">
         <div class="video-wrap">
-          <video controls preload="none" poster="the-machhapuchare.jpg">
+          <video controls preload="none" poster="the-machhapuchare.jpg"
+                 onerror="this.parentElement.querySelector('.video-fallback').style.display='flex';this.style.display='none';">
             <source src="Drone_Mapping_of_Ecosystem_Structure.MOV" type="video/quicktime">
             <source src="Drone_Mapping_of_Ecosystem_Structure.MOV" type="video/mp4">
-            Your browser does not support the video tag. <a href="Drone_Mapping_of_Ecosystem_Structure.MOV">Download the video.</a>
           </video>
-          <div class="video-overlay"></div>
+          <!-- Fallback displayed if video can't load -->
+          <div class="video-fallback" style="display:none;align-items:center;justify-content:center;
+               height:360px;background:linear-gradient(135deg,#0d1b2a,#1a3550);border-radius:16px;
+               flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
+            <i class="fa fa-video" style="font-size:3rem;color:rgba(255,255,255,.3);"></i>
+            <div>
+              <div style="color:#fff;font-weight:600;margin-bottom:.3rem;">Drone Mapping of Ecosystem Structure</div>
+              <div style="color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.6;">
+                Aerial survey of ecosystem canopy structure for ET partitioning validation.<br>
+                <em style="font-size:.75rem;">(Video hosted locally — contact for access)</em>
+              </div>
+            </div>
+            <a href="mailto:ppushpendra@ua.edu?subject=Drone Video Request"
+               style="background:rgba(63,169,214,.2);border:1px solid rgba(63,169,214,.4);
+               color:#90cce8;border-radius:6px;padding:.5rem 1.2rem;text-decoration:none;
+               font-size:.82rem;transition:background .2s;"
+               onmouseover="this.style.background='rgba(63,169,214,.35)'"
+               onmouseout="this.style.background='rgba(63,169,214,.2)'">
+              <i class="fa fa-envelope me-1"></i>Request Video
+            </a>
+          </div>
         </div>
         <p style="font-size:.78rem;color:var(--muted);text-align:center;margin-top:.6rem;">
           <i class="fa fa-video me-1"></i>Drone Mapping of Ecosystem Structure for ET Partitioning Research
