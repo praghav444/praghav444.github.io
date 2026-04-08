@@ -1,0 +1,12 @@
+# Large binary files — too big for GitHub (host separately)
+Drone_Mapping_of_Ecosystem_Structure.MOV
+
+# Research PDF library — not needed for GitHub Pages
+MyResearchArticlesPDF/
+
+# Claude Code local settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
