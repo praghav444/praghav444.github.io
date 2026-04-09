@@ -174,6 +174,59 @@
   }
   .btn-hero-ghost:hover { background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.6); }
 
+  /* ─────────── RESEARCH MINI DIAGRAM (Hero) ─────────── */
+  .rmd-wrap {
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin: 1.25rem 0;
+  }
+  .rmd-label {
+    font-size: .62rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: rgba(255,255,255,.3); margin-bottom: .7rem;
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .rmd-label::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.08); }
+  .rmd-tier { display:flex; align-items:center; gap:.45rem; flex-wrap:wrap; }
+  .rmd-chip {
+    display:flex; align-items:center; gap:.45rem;
+    background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1);
+    border-radius:9px; padding:.32rem .65rem; flex:1; min-width:140px;
+    transition: background .2s;
+  }
+  .rmd-chip:hover { background:rgba(255,255,255,.11); }
+  .rmd-chip.obs  { border-color:rgba(63,169,214,.35); background:rgba(63,169,214,.08); }
+  .rmd-chip.obs:hover { background:rgba(63,169,214,.14); }
+  .rmd-chip.mdl  { border-color:rgba(26,124,90,.4);  background:rgba(26,124,90,.09); }
+  .rmd-chip.mdl:hover { background:rgba(26,124,90,.15); }
+  .rmd-chip.ml   { border-color:rgba(200,144,42,.4); background:rgba(200,144,42,.09); }
+  .rmd-chip.ml:hover  { background:rgba(200,144,42,.15); }
+  .rmd-ci { font-size: .95rem; flex-shrink:0; }
+  .rmd-text { display:flex; flex-direction:column; }
+  .rmd-text b   { font-size:.71rem; color:#fff; font-weight:600; line-height:1.25; }
+  .rmd-text em  { font-size:.61rem; color:rgba(255,255,255,.42); font-style:normal; }
+  .rmd-plus { color:rgba(255,255,255,.28); font-weight:700; font-size:.85rem; flex-shrink:0; }
+  .rmd-conn {
+    display:flex; align-items:center; gap:.45rem;
+    color:rgba(255,255,255,.25); font-size:.63rem;
+    padding:.18rem 0; margin:.05rem 0;
+  }
+  .rmd-conn::before, .rmd-conn::after {
+    content:''; flex:1; height:1px; background:rgba(255,255,255,.07);
+  }
+  .rmd-conn i { font-size:.55rem; }
+  .rmd-pills { display:flex; flex-wrap:wrap; gap:.35rem; }
+  .rmd-pill {
+    font-size:.66rem; border-radius:20px; padding:.18rem .6rem;
+    background:rgba(63,169,214,.1); border:1px solid rgba(63,169,214,.22);
+    color:rgba(255,255,255,.78);
+  }
+  .rmd-pill.imp {
+    background:rgba(192,57,43,.1); border-color:rgba(192,57,43,.28);
+    color:rgba(255,220,210,.8);
+  }
+
   /* ─────────── HERO SCROLL INDICATOR ─────────── */
   .scroll-indicator {
     position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
@@ -742,38 +795,80 @@
         <p class="hero-title reveal reveal-delay-2">Ecohydrology &nbsp;·&nbsp; Land Surface Modeling &nbsp;·&nbsp; Physics-Informed ML</p>
 
         <p class="hero-bio reveal reveal-delay-2">
-          I study how water, energy, and carbon cycle through the land surface and atmosphere —
-          improving predictions of evapotranspiration, soil moisture, and hydrological extremes
-          by combining eddy covariance flux tower observations, remote sensing, Earth system models,
-          and physics-informed machine learning.
+          I study how water, energy, and carbon move between the land surface and the atmosphere. My work focuses on improving predictions of evapotranspiration, soil moisture, and hydrological extremes by integrating eddy covariance flux tower observations, remote sensing data, Earth system models, and physics-informed machine learning.
         </p>
 
-        <div class="stat-grid reveal reveal-delay-3">
-          <div class="stat-box">
-            <div class="num"><span class="counter" data-target="17">17</span>+</div>
-            <div class="lbl">Papers</div>
-          </div>
-          <div class="stat-box">
-            <div class="num"><span class="counter" data-target="8">8</span>+</div>
-            <div class="lbl">Under Review</div>
-          </div>
-          <div class="stat-box">
-            <div class="num"><span class="counter" data-target="6">6</span>+</div>
-            <div class="lbl">Yrs Research</div>
-          </div>
-          <div class="stat-box">
-            <div class="num">2025</div>
-            <div class="lbl">Diss. Award</div>
-          </div>
-        </div>
+        <!-- ── Research Flow Diagram (replaces stat-grid) ── -->
+        <div class="rmd-wrap reveal reveal-delay-3">
+          <div class="rmd-label"><i class="fa fa-diagram-project me-1" style="color:var(--sky);"></i>Research at a Glance</div>
 
-        <div class="mb-3 reveal reveal-delay-3">
-          <span class="hero-tag">Evapotranspiration</span>
-          <span class="hero-tag">Soil Moisture</span>
-          <span class="hero-tag">Drought Early Warning</span>
-          <span class="hero-tag">E3SM / CLM</span>
-          <span class="hero-tag">Eddy Covariance</span>
-          <span class="hero-tag">Physics-Informed ML</span>
+          <!-- Tier 1 — Observations -->
+          <div class="rmd-tier">
+            <div class="rmd-chip obs">
+              <span class="rmd-ci">🗼</span>
+              <span class="rmd-text">
+                <b>Eddy Covariance Flux Towers</b>
+                <em>In-situ ET · H · NEE · FLUXNET</em>
+              </span>
+            </div>
+            <div class="rmd-chip obs">
+              <span class="rmd-ci">🛰️</span>
+              <span class="rmd-text">
+                <b>Remote Sensing</b>
+                <em>ECOSTRESS · MODIS · Landsat</em>
+              </span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="rmd-conn">
+            <i class="fa fa-arrow-down"></i> validate &amp; constrain
+          </div>
+
+          <!-- Tier 2 — Core research: models + ML -->
+          <div class="rmd-tier">
+            <div class="rmd-chip mdl">
+              <span class="rmd-ci">⚙️</span>
+              <span class="rmd-text">
+                <b>Land Surface Models</b>
+                <em>ELM · CLM · VIC — parameterization &amp; structure</em>
+              </span>
+            </div>
+            <div class="rmd-plus">+</div>
+            <div class="rmd-chip ml">
+              <span class="rmd-ci">🧠</span>
+              <span class="rmd-text">
+                <b>Physics-Informed ML</b>
+                <em>Deep learning · Random forest · Process discovery</em>
+              </span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div class="rmd-conn">
+            <i class="fa fa-arrow-down"></i> improves predictions of
+          </div>
+
+          <!-- Tier 3 — Process variables -->
+          <div class="rmd-pills">
+            <span class="rmd-pill">💧 Total ET</span>
+            <span class="rmd-pill">🌿 Transpiration</span>
+            <span class="rmd-pill">💨 Soil Evaporation</span>
+            <span class="rmd-pill">🏔️ Soil Moisture</span>
+            <span class="rmd-pill">🌱 Stomatal Conductance</span>
+          </div>
+
+          <!-- Connector -->
+          <div class="rmd-conn">
+            <i class="fa fa-arrow-down"></i> enabling
+          </div>
+
+          <!-- Tier 4 — Applications/Impacts -->
+          <div class="rmd-pills">
+            <span class="rmd-pill imp">🌵 Vegetation Drought Detection</span>
+            <span class="rmd-pill imp">🌊 Flood Forecasting</span>
+            <span class="rmd-pill imp">☁️ Numerical Weather Prediction</span>
+          </div>
         </div>
 
         <div class="mb-3 reveal reveal-delay-4">
