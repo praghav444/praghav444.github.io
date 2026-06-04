@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery · Pushpendra Raghav</title>
+<meta name="description" content="Gallery — conference presentations, fieldwork, and academic milestones of Pushpendra Raghav.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+:root{--ink:#1b1d1f;--muted:#6a6f76;--line:#e6e8ea;--accent:#2f6f7e;--accent-dark:#235862;--bg:#fff;--maxw:920px;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16.5px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;}a:hover{color:var(--accent-dark);text-decoration:underline;}
+h1{font-family:'Source Serif 4',Georgia,serif;font-weight:700;line-height:1.2;color:var(--ink);}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;}
+nav .brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1rem;color:var(--ink);}
+nav .brand:hover{text-decoration:none;}
+nav .links a{color:var(--muted);font-size:.86rem;font-weight:500;margin-left:1.35rem;}
+nav .links a:hover{color:var(--accent);text-decoration:none;}
+nav .links a.active{color:var(--ink);}
+@media(max-width:620px){nav .wrap{height:auto;flex-direction:column;align-items:flex-start;padding:8px 0;}nav .links{margin-top:2px;}nav .links a:first-child{margin-left:0;}}
+header{padding:52px 0 8px;}
+h1{font-size:2.3rem;margin:0 0 6px;letter-spacing:-.3px;}
+.lead{color:var(--muted);font-size:.96rem;margin:0 0 6px;}
+.backrow{margin:6px 0 0;font-size:.9rem;}
+main{padding:26px 0 50px;}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
+.gcard img{width:100%;height:225px;object-fit:cover;border-radius:6px;border:1px solid var(--line);cursor:zoom-in;display:block;transition:opacity .15s;}
+.gcard img:hover{opacity:.92;}
+.gcap{margin-top:9px;}
+.gcap .t{font-weight:600;font-size:.96rem;}
+.gcap .s{color:var(--muted);font-size:.85rem;}
+footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--muted);font-size:.85rem;}
+footer a{color:var(--muted);}footer a:hover{color:var(--accent);}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(16,19,21,.93);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:50;padding:32px;}
+.lb.open{display:flex;}
+.lb img{max-width:92vw;max-height:80vh;object-fit:contain;border-radius:4px;}
+.lb .cap{color:#e9ecef;font-size:.92rem;margin-top:16px;text-align:center;max-width:760px;line-height:1.5;}
+.lb .x{position:absolute;top:16px;right:24px;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;background:none;border:none;}
+.lb .x:hover{color:#fff;opacity:.8;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Pushpendra Raghav</a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#cv">CV</a>
+      <a href="gallery.html" class="active">Gallery</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Gallery</h1>
+    <p class="lead">Conference presentations, fieldwork, and academic milestones.</p>
+    <p class="backrow"><a href="index.html">&larr; Back to home</a></p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="gal">
+
+      <div class="gcard">
+        <img src="photos/AGU_2025_Session_Convener_New_Orleans.jpeg" alt="AGU Fall Meeting 2025, New Orleans"
+             data-cap="AGU Fall Meeting 2025 — Session convener, New Orleans, LA (December 2025)." onclick="openLb(this)">
+        <div class="gcap"><div class="t">AGU Fall Meeting 2025 — Session Convener</div><div class="s">New Orleans, LA · Dec 2025</div></div>
+      </div>
+
+      <div class="gcard">
+        <img src="photos/AGU_Chapman_2025_NCAR_Boulder.JPG" alt="AGU Chapman Conference, NCAR Boulder"
+             data-cap="AGU Chapman Conference on the Energy Balance Closure Problem — NCAR, Boulder, CO (September 2025)." onclick="openLb(this)">
+        <div class="gcap"><div class="t">AGU Chapman Conference</div><div class="s">NCAR, Boulder, CO · Sep 2025</div></div>
+      </div>
+
+      <div class="gcard">
+        <img src="photos/2025_Outstanding_Dissertation_Award.jpeg" alt="Outstanding Dissertation Award 2025"
+             data-cap="Outstanding Dissertation Award — Dept. of Civil, Construction & Environmental Engineering, The University of Alabama (April 2025)." onclick="openLb(this)">
+        <div class="gcap"><div class="t">Outstanding Dissertation Award</div><div class="s">University of Alabama · Apr 2025</div></div>
+      </div>
+
+      <div class="gcard">
+        <img src="photos/AGU_2024_Washington_DC.JPG" alt="AGU Fall Meeting 2024, Washington DC"
+             data-cap="AGU Fall Meeting 2024 — Washington, D.C. Presenting on evaporative stress indices and vegetation water stress (December 2024)." onclick="openLb(this)">
+        <div class="gcap"><div class="t">AGU Fall Meeting 2024</div><div class="s">Washington, D.C. · Dec 2024</div></div>
+      </div>
+
+      <div class="gcard">
+        <img src="photos/Ecological_Society_of_America_Conference_2024_Long_Bech_California.jpeg" alt="ESA Annual Meeting 2024, Long Beach"
+             data-cap="Ecological Society of America Annual Meeting 2024 — Long Beach, CA. Presenting on stomatal conductance model limitations (August 2024)." onclick="openLb(this)">
+        <div class="gcap"><div class="t">Ecological Society of America 2024</div><div class="s">Long Beach, CA · Aug 2024</div></div>
+      </div>
+
+      <div class="gcard">
+        <img src="photos/the-machhapuchare.jpg" alt="Machapuchare, Nepal"
+             data-cap="Beyond research — Machapuchare (Fishtail), Annapurna range, Nepal." onclick="openLb(this)">
+        <div class="gcap"><div class="t">Beyond research</div><div class="s">Machapuchare, Nepal</div></div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Pushpendra Raghav · <a href="index.html">Home</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" onclick="if(event.target.id==='lb')closeLb()">
+  <button class="x" onclick="closeLb()" aria-label="Close">&times;</button>
+  <img id="lbimg" src="" alt="">
+  <div class="cap" id="lbcap"></div>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+function openLb(el){
+  document.getElementById('lbimg').src=el.src;
+  document.getElementById('lbcap').textContent=el.dataset.cap||'';
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb(){document.getElementById('lb').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+</body>
+</html>
