@@ -91,6 +91,12 @@ section h2{font-size:1.32rem;margin:0 0 20px;}
 .press-body .credit{color:var(--muted);font-size:.75rem;margin-top:8px;}
 @media(max-width:620px){.press{flex-direction:column;gap:14px;}.press-img img{width:100%;height:200px;}}
 
+/* research-at-a-glance */
+.glance-fig{display:block;margin-top:4px;}
+.glance-fig img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;}
+.glance-fig:hover img{opacity:.96;}
+.glance-cap{color:var(--muted);font-size:.78rem;margin-top:8px;}
+
 /* publication lists */
 .pubs{list-style:none;margin:0;padding:0;counter-reset:none;}
 .pubs li{position:relative;padding:0 0 16px 34px;font-size:.95rem;}
@@ -125,6 +131,7 @@ footer a{color:var(--muted);}footer a:hover{color:var(--accent);}
   <div class="wrap">
     <a class="brand" href="#top">Pushpendra Raghav</a>
     <div class="links">
+      <a href="#overview">Overview</a>
       <a href="#research">Research</a>
       <a href="#press">Press</a>
       <a href="#publications">Publications</a>
@@ -168,6 +175,32 @@ footer a{color:var(--muted);}footer a:hover{color:var(--accent);}
     </div>
   </div>
 </header>
+
+<!-- ── RESEARCH AT A GLANCE ── -->
+<section id="overview">
+  <div class="wrap">
+    <h2>Research at a Glance</h2>
+    <p class="lead">From observations to predictions to decisions — how the pieces of my work fit together.</p>
+    <a class="glance-fig" href="Figures/ResearchGlance.jpg" target="_blank" rel="noopener">
+      <img src="Figures/ResearchGlance.jpg" alt="Overview of my research: ground observations and satellite remote sensing constrain land surface and physics-informed machine-learning models to improve water-cycle predictions and early-warning tools.">
+    </a>
+    <p class="glance-cap">Click to enlarge.</p>
+    <p style="margin-top:16px;">
+      I combine <strong>ground-based observations</strong> — eddy-covariance carbon &amp; water fluxes (FLUXNET,
+      SAPFLUXNET) — with <strong>satellite remote sensing</strong> across the thermal, optical, and LiDAR domains
+      (ECOSTRESS, MODIS, Landsat, GEDI, and next-generation missions such as Hydrosat's Van&nbsp;Zyl constellation)
+      to <strong>validate and constrain</strong> land surface models (ELM, CLM) and <strong>physics-informed
+      machine learning</strong>.
+    </p>
+    <p>
+      The goal is to better observe and predict the <strong>land water cycle</strong> — evapotranspiration and its
+      partitioning into <strong>plant transpiration vs. soil evaporation</strong>, <strong>soil moisture</strong>,
+      and <strong>stomatal conductance</strong> — and to turn those improvements into tools that matter for people:
+      <strong>drought detection, flood forecasting, numerical weather prediction, and early warning</strong> of
+      hydrological extremes.
+    </p>
+  </div>
+</section>
 
 <!-- ── SELECTED RESEARCH ── -->
 <section id="research">
