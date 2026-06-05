@@ -17,7 +17,9 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;background:var(--page);color:var(--ink);
+body{margin:0;
+  background:linear-gradient(rgba(233,237,239,.90),rgba(233,237,239,.93)),url('photos/Back_3.jpg') center top/cover fixed;
+  background-color:var(--page);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
@@ -181,7 +183,7 @@ footer{color:var(--muted);font-size:.82rem;}
         <div class="tb-menu">
           <a href="#awards">Awards &amp; Honors</a>
           <a href="#grants">Grants &amp; Proposals</a>
-          <a href="#talks">Invited Talks</a>
+          <a href="#talks">Talks, Presentations &amp; Posters</a>
           <a href="#service">Professional Service</a>
           <a href="My_CV_NEW_Latest.pdf" target="_blank" rel="noopener">CV (PDF)</a>
         </div>
@@ -230,7 +232,7 @@ footer{color:var(--muted);font-size:.82rem;}
       <a href="#publications">Publications</a>
       <a href="#awards">Awards &amp; Honors</a>
       <a href="#grants">Grants &amp; Proposals</a>
-      <a href="#talks">Invited Talks</a>
+      <a href="#talks">Talks &amp; Presentations</a>
       <a href="#press">Press</a>
       <a href="#software">Software &amp; Data</a>
       <a href="#service">Professional Service</a>
@@ -424,13 +426,43 @@ footer{color:var(--muted);font-size:.82rem;}
     </section>
 
     <section id="talks">
-      <h2>Invited Talks</h2>
+      <h2>Talks, Presentations &amp; Posters</h2>
+      <p class="lead"><sup>*</sup> presenting author / convener</p>
+
+      <div class="subhead">Invited talks</div>
       <ul class="simple">
         <li>Advancing measurements and modeling of invisible components of the water budget — AGU Fall Meeting, New Orleans <span class="when">— 2025</span></li>
         <li>Flux partitioning in wetland systems — AmeriFlux Annual Meeting <span class="when">— 2025</span></li>
         <li>How representative are ecosystem-level evaporative stress indices of vegetation stress? — AGU Fall Meeting, Washington, D.C. <span class="when">— 2024</span></li>
         <li>Evapotranspiration predictions: gaps, challenges, and the way forward — University of Toledo <span class="when">— 2024</span></li>
         <li>Retrieving gap-free daily root-zone soil moisture using SFE theory — The Ohio State University <span class="when">— 2024</span></li>
+      </ul>
+
+      <div class="subhead">Conference presentations &amp; posters</div>
+      <ul class="simple">
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2025). Evaluating the accuracy of Evaporative Stress Index–based flash drought detection in global reanalysis data. <span class="venue">AGU Fall Meeting (H21B-04), New Orleans, LA.</span></li>
+        <li><strong>Raghav, P.</strong>, &amp; Kumar, M.<sup>*</sup> (2025). Leveraging FLUXNET data for improved estimation of potential evapotranspiration using the Priestley–Taylor method. <span class="venue">AGU Fall Meeting (B12C-07), New Orleans, LA.</span></li>
+        <li>Salvi, K., <strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2025). Evaluation of temperature trends simulated by reanalysis data at observation sites in the continental United States. <span class="venue">AGU Fall Meeting (BH11M-1043), New Orleans, LA.</span></li>
+        <li>Kumar, M.<sup>*</sup>, <strong>Raghav, P.</strong>, Liu, Y., &amp; Bisht, G. (2025). The complexity paradox: when advanced evapotranspiration models underperform (invited). <span class="venue">AGU Fall Meeting (H52A-02), New Orleans, LA.</span></li>
+        <li>Nishan, B.<sup>*</sup>, Wagle, P., <strong>Raghav, P.</strong>, &amp; Shayeghi, A. (2025). Advancing measurements and modeling of invisible components of the water budget (oral). <span class="venue">AGU Fall Meeting (H13M), New Orleans, LA.</span></li>
+        <li>Tang, A.<sup>*</sup>, <strong>Raghav, P.</strong><sup>*</sup>, &amp; Forbrich, I. (2025). Partitioning evapotranspiration in coastal wetlands using flux variance similarity. <span class="venue">AGU Fall Meeting (H42D-06), New Orleans, LA.</span></li>
+        <li>Wolkeba, F.<sup>*</sup>, Kumar, M., <strong>Raghav, P.</strong>, &amp; Thakur, H. (2025). A high-performing 1-km daily gridded evapotranspiration dataset for CONUS based on Surface Flux Equilibrium theory. <span class="venue">AGU Fall Meeting (H41D-07), New Orleans, LA.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2025). Evaluating the influence of model parameters, structure, input data, and site characteristics on energy-partitioning errors in land surface models. <span class="venue">AGU Chapman Conference on the Energy Balance Closure Problem, Boulder, CO.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, Liu, Y., &amp; Kumar, M. (2024). Enhancing water and carbon flux predictions: a comparative study of multi-layer canopy and big-leaf models under varying water stress and light conditions. <span class="venue">AGU Fall Meeting, Washington, D.C.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2024). How representative are ecosystem-level evaporative stress indices of vegetation evaporative stress? <span class="venue">AGU Fall Meeting, Washington, D.C.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2024). The accuracy of evapotranspiration prediction is impeded by structural limitations in current stomatal conductance models. <span class="venue">Ecological Society of America Annual Meeting, Long Beach, CA.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2023). A physics-informed machine learning approach to study the global dynamics of the transpiration-to-evapotranspiration ratio. <span class="venue">AGU Fall Meeting (B43E-2592), San Francisco, CA.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2023). Evapotranspiration partitioning in evaporation-dominant settings. <span class="venue">AGU Fall Meeting (H21Q-1573), San Francisco, CA.</span></li>
+        <li>Ghaseminejad, A., <strong>Raghav, P.</strong>, &amp; Kumar, M.<sup>*</sup> (2023). Is the representation of interannual leaf phenology dynamics needed for accurate estimation of evapotranspiration? <span class="venue">AGU Fall Meeting (B43E-2604), San Francisco, CA.</span></li>
+        <li>Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong>, Kumar, M., Scanlon, T. M., Northup, B. K., Moffet, C., Gunter, S., &amp; Xiao, X. (2023). A comparison of FVS, MREA, and CEC methods to partition evapotranspiration in tallgrass prairies. <span class="venue">AGU Fall Meeting (H13D-06), San Francisco, CA.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2022). Assessing evapotranspiration partitioning obtained using land surface models across varied ecosystems. <span class="venue">AGU Fall Meeting (B12E-1121), Chicago, IL.</span></li>
+        <li>Ghaseminejad, A.<sup>*</sup>, Bhat, M., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2022). Machine-learning-driven temporal downscaling of groundwater recharge estimates to obtain event-based response. <span class="venue">AGU Fall Meeting (H35H-1215), Chicago, IL.</span></li>
+        <li>Kumar, M.<sup>*</sup>, Rathore, L. S., Hanasaki, N., Mekonnen, M., &amp; <strong>Raghav, P.</strong> (2022). Rain-fed to irrigation-fed transition of cropped agriculture may enhance urban–rural water conflict. <span class="venue">AGU Fall Meeting (GC35D-05), Chicago, IL.</span></li>
+        <li>Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong>, &amp; Kumar, M. (2022). Sensitivity of water-use-efficiency parameterizations on flux-variance-similarity-based partitioning of evapotranspiration. <span class="venue">AGU Fall Meeting (B12E-1123), Chicago, IL.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup>, &amp; Kumar, M. (2021). Are canonical relations to partition evapotranspiration valid for managed systems? <span class="venue">AGU Fall Meeting (B12B-02), New Orleans, LA.</span></li>
+        <li><strong>Raghav, P.</strong>, &amp; Kumar, M.<sup>*</sup> (2021). Obtaining daily root-zone soil moisture using a calibration-free approach. <span class="venue">AGU Fall Meeting (H55C-0777), New Orleans, LA.</span></li>
+        <li><strong>Raghav, P.</strong>, &amp; Eldho, T. I.<sup>*</sup> (2019). Investigations on the impacts of future climate change on the hydrology of a river basin in India using a macroscale hydrological model. <span class="venue">11th World Congress on Water Resources and Environment (EWRA), Madrid, Spain.</span></li>
+        <li><strong>Raghav, P.</strong><sup>*</sup> (2019). Assessing the impacts of climate change on crop yield in the Upper Godavari River basin using the H08 hydrological model. <span class="venue">ISIMIP Cross-Sectoral Workshop, Paris, France.</span></li>
       </ul>
     </section>
 
