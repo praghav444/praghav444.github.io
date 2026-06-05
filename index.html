@@ -17,7 +17,9 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;background:var(--page);color:var(--ink);
+body{margin:0;
+  background:linear-gradient(rgba(235,240,242,.42),rgba(235,240,242,.52)),url('photos/water_bg.jpg') center/cover fixed;
+  background-color:var(--page);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
@@ -164,8 +166,6 @@ footer{color:var(--muted);font-size:.82rem;}
 </style>
 </head>
 <body>
-
-<div class="bgfx" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <div class="banner">
   <div class="banner-cap">
@@ -529,7 +529,8 @@ footer{color:var(--muted);font-size:.82rem;}
         Office 1033, Cyber Hall, 248 Kirkbride Ln, Tuscaloosa, AL 35401<br>
         <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a> · +1 313-742-3251
       </p>
-      <footer>© <span id="yr"></span> Pushpendra Raghav · The University of Alabama</footer>
+      <footer>© <span id="yr"></span> Pushpendra Raghav · The University of Alabama<br>
+        <span style="opacity:.85;">Background photo by Linda Xu on Unsplash</span></footer>
     </section>
 
   </main>
