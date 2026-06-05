@@ -17,9 +17,7 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;
-  background:linear-gradient(rgba(233,237,239,.90),rgba(233,237,239,.93)),url('photos/Back_3.jpg') center top/cover fixed;
-  background-color:var(--page);color:var(--ink);
+body{margin:0;background:var(--page);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
@@ -147,9 +145,27 @@ footer{color:var(--muted);font-size:.82rem;}
 .tb-menu a{display:block;font-size:.84rem;color:var(--ink);padding:7px 10px;border-radius:5px;}
 .tb-menu a:hover{background:var(--soft);color:var(--accent);text-decoration:none;}
 @media(max-width:860px){.tb-nav{display:none;}.banner{height:108px;}.banner-cap .bs{display:none;}}
+
+/* dynamic (cross-fading) background */
+.bgfx{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--page);}
+.bgfx span{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;will-change:opacity;animation:bgcycle 39s linear infinite;}
+.bgfx span:nth-child(1){background-image:url('photos/back.jpeg');animation-delay:0s;}
+.bgfx span:nth-child(2){background-image:url('photos/the-machhapuchare.jpg');animation-delay:13s;}
+.bgfx span:nth-child(3){background-image:url('photos/Back_3.jpg');animation-delay:26s;}
+.bgfx::after{content:"";position:absolute;inset:0;background:rgba(233,237,239,.40);}
+@keyframes bgcycle{0%{opacity:0;}4%{opacity:.24;}28%{opacity:.24;}34%{opacity:0;}100%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.bgfx span{animation:none;opacity:0;}.bgfx span:first-child{opacity:.2;}}
+
+/* collapsible subsections */
+.subhead.collapsible{cursor:pointer;user-select:none;display:flex;align-items:center;gap:7px;}
+.subhead.collapsible::before{content:"\f107";font-family:"Font Awesome 6 Free";font-weight:900;font-size:.78rem;color:var(--accent);width:10px;}
+.subhead.collapsible.closed::before{content:"\f105";}
+.subhead .count{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0;}
 </style>
 </head>
 <body>
+
+<div class="bgfx" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <div class="banner">
   <div class="banner-cap">
@@ -579,6 +595,21 @@ document.getElementById('vcPhoto').addEventListener('click',openVC);
 document.getElementById('vcLink').addEventListener('click',function(e){e.preventDefault();openVC();});
 vcModal.addEventListener('click',function(e){if(e.target===vcModal)closeVC();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVC();});
+
+/* collapsible subsections (Publications, Talks) — keep first open, collapse the rest */
+function setupAccordion(sectionId){
+  document.querySelectorAll('#'+sectionId+' .subhead').forEach(function(h,i){
+    h.classList.add('collapsible');
+    var list=h.nextElementSibling;
+    var n=list?list.querySelectorAll('li').length:0;
+    if(n){var c=document.createElement('span');c.className='count';c.textContent='('+n+')';h.appendChild(document.createTextNode(' '));h.appendChild(c);}
+    function setClosed(closed){h.classList.toggle('closed',closed);if(list)list.style.display=closed?'none':'';}
+    h.addEventListener('click',function(){setClosed(!h.classList.contains('closed'));});
+    if(i>0) setClosed(true);
+  });
+}
+setupAccordion('publications');
+setupAccordion('talks');
 </script>
 </body>
 </html>
