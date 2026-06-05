@@ -9,14 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 :root{
-  --ink:#1b1d1f; --muted:#6a6f76; --line:#e3e6e8;
-  --accent:#2f6f7e; --accent-dark:#235862; --bg:#ffffff; --soft:#f6f8f9;
+  --ink:#1b1d1f; --muted:#6a6f76; --line:#e1e5e7;
+  --accent:#2f6f7e; --accent-dark:#235862; --bg:#ffffff; --soft:#f6f8f9; --page:#e9edef;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;background:var(--bg);color:var(--ink);
+body{margin:0;background:var(--page);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
@@ -24,52 +25,58 @@ a:hover{color:var(--accent-dark);text-decoration:underline;}
 h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--ink);line-height:1.2;}
 
 /* layout */
-.layout{max-width:1100px;margin:0 auto;display:flex;gap:44px;padding:0 24px;}
-.sidebar{flex:0 0 282px;width:282px;position:sticky;top:0;align-self:flex-start;
-  max-height:100vh;overflow-y:auto;padding:30px 0 24px;}
-.main{flex:1 1 auto;min-width:0;padding:34px 0 64px;}
-@media(max-width:840px){
-  .layout{flex-direction:column;gap:0;}
-  .sidebar{position:static;width:auto;max-height:none;flex:none;padding:26px 0 18px;border-bottom:1px solid var(--line);}
-  .main{padding:24px 0 50px;}
+.layout{max-width:1120px;margin:0 auto;display:flex;gap:24px;padding:22px 22px 44px;align-items:flex-start;}
+.sidebar{flex:0 0 290px;width:290px;position:sticky;top:18px;align-self:flex-start;max-height:calc(100vh - 36px);
+  overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 1px 3px rgba(20,30,40,.06);padding:24px 20px;text-align:center;}
+.main{flex:1 1 auto;min-width:0;}
+@media(max-width:860px){
+  .layout{flex-direction:column;gap:16px;padding:14px 14px 40px;}
+  .sidebar{position:static;width:auto;max-height:none;flex:none;}
 }
 
-/* sidebar */
-.side-photo img{width:152px;height:152px;object-fit:cover;border-radius:8px;border:1px solid var(--line);}
-.side-name{font-size:1.55rem;font-weight:700;margin:16px 0 2px;}
-.side-title{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:6px;}
-.side-affil{font-size:.84rem;color:var(--muted);margin-bottom:14px;}
-.card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:13px 14px;font-size:.83rem;line-height:1.5;margin-bottom:14px;}
+/* sidebar identity */
+.side-photo{cursor:pointer;display:inline-block;position:relative;line-height:0;}
+.side-photo img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--accent);transition:box-shadow .15s;}
+.side-photo:hover img{box-shadow:0 0 0 2px var(--accent-dark);}
+.side-photo::after{content:"\f029";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;right:6px;bottom:6px;
+  background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;box-shadow:0 1px 4px rgba(0,0,0,.25);}
+.side-name{font-size:1.5rem;font-weight:700;margin:14px 0 2px;}
+.side-title{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dark);font-weight:600;}
+.side-affil{font-size:.84rem;color:var(--muted);margin:5px 0 10px;}
+.vc-trigger{display:inline-block;font-size:.78rem;color:var(--accent);border:1px solid var(--line);border-radius:20px;padding:4px 12px;margin-bottom:14px;cursor:pointer;}
+.vc-trigger:hover{background:var(--accent);color:#fff;text-decoration:none;border-color:var(--accent);}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.82rem;line-height:1.5;margin-bottom:14px;text-align:left;}
 .card .row{display:flex;gap:9px;margin-bottom:8px;}
 .card .row:last-child{margin-bottom:0;}
 .card i{color:var(--accent);width:15px;text-align:center;margin-top:3px;flex:0 0 15px;}
 .card a{word-break:break-word;}
 .side-icns{margin-bottom:16px;}
-.side-icns a{font-size:1.16rem;color:var(--ink);margin-right:15px;display:inline-block;}
+.side-icns a{font-size:1.16rem;color:var(--ink);margin:0 7px;display:inline-block;}
 .side-icns a:hover{color:var(--accent);text-decoration:none;}
-.sidenav{border-top:1px solid var(--line);padding-top:10px;}
-.sidenav a{display:block;font-size:.85rem;color:var(--muted);padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;}
+.sidenav{border-top:1px solid var(--line);padding-top:10px;text-align:left;}
+.sidenav a{display:block;font-size:.85rem;color:var(--muted);padding:5px 0 5px 12px;border-left:2px solid transparent;}
 .sidenav a:hover{color:var(--accent);text-decoration:none;}
-.sidenav a.active{color:var(--accent-dark);border-left-color:var(--accent);font-weight:600;}
+.sidenav a.active{color:var(--accent-dark);border-left-color:var(--accent);font-weight:600;background:var(--soft);}
 
-/* main sections */
-.main section{padding:14px 0 26px;scroll-margin-top:14px;}
-.main section:first-child{padding-top:0;}
-.main h2{font-size:1.28rem;margin:0 0 16px;padding-bottom:7px;border-bottom:2px solid var(--accent);}
+/* main section cards */
+.main section{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px 26px;
+  margin-bottom:20px;scroll-margin-top:16px;box-shadow:0 1px 3px rgba(20,30,40,.06);}
+.main section:last-child{margin-bottom:0;}
+.main h2{font-size:1.26rem;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
 .lead{color:var(--muted);font-size:.93rem;margin:-6px 0 18px;}
 p{margin:0 0 14px;}
+section p:last-child{margin-bottom:0;}
 
-/* research interests bullets */
 .bullets{margin:0;padding-left:20px;}
 .bullets li{margin-bottom:8px;}
 
-/* selected research */
 .hl{padding-left:15px;border-left:2px solid var(--accent);margin-bottom:20px;}
+.hl:last-child{margin-bottom:0;}
 .hl .t{font-weight:600;font-size:1.0rem;}
 .hl .m{color:var(--muted);font-size:.84rem;margin:2px 0 6px;}
 .hl .d{font-size:.95rem;}
 
-/* press */
 .press{display:flex;gap:22px;align-items:flex-start;}
 .press-img img{width:230px;height:152px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block;}
 .press-img:hover img{opacity:.92;}
@@ -79,32 +86,46 @@ p{margin:0 0 14px;}
 .press-body .credit{color:var(--muted);font-size:.74rem;margin-top:7px;}
 @media(max-width:560px){.press{flex-direction:column;gap:12px;}.press-img img{width:100%;height:190px;}}
 
-/* glance figure */
 .glance-fig img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;}
 .glance-fig:hover img{opacity:.96;}
 .glance-cap{color:var(--muted);font-size:.78rem;margin:8px 0 14px;}
 
-/* publications */
 .subhead{font-weight:600;font-size:.76rem;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:22px 0 12px;}
 .subhead:first-child{margin-top:0;}
 .pubs{list-style:none;margin:0;padding:0;}
 .pubs li{position:relative;padding:0 0 14px 32px;font-size:.93rem;}
+.pubs li:last-child{padding-bottom:0;}
 .pubs li .n{position:absolute;left:0;top:0;color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums;}
 .pubs li .venue{font-style:italic;color:#3a3f45;}
 .pubs li .doi{font-size:.79rem;white-space:nowrap;}
 .tag{font-size:.68rem;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--accent-dark);
   border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-right:5px;}
 
-/* simple lists / items */
 .simple{margin:0;padding:0;list-style:none;}
 .simple li{font-size:.93rem;padding:0 0 10px 0;}
+.simple li:last-child{padding-bottom:0;}
 .simple li .when{color:var(--muted);font-size:.84rem;}
 .item{font-size:.93rem;margin-bottom:13px;}
+.item:last-child{margin-bottom:0;}
 .item .h{font-weight:600;}
 .item .s{color:var(--muted);font-size:.85rem;}
 .inline-list{font-size:.93rem;}
+footer{color:var(--muted);font-size:.82rem;}
 
-footer{border-top:1px solid var(--line);margin-top:18px;padding-top:18px;color:var(--muted);font-size:.82rem;}
+/* virtual contact card modal */
+.vc-modal{position:fixed;inset:0;background:rgba(16,19,21,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:24px;}
+.vc-modal.open{display:flex;}
+.vc-box{background:#fff;border-radius:16px;padding:26px 28px;max-width:330px;width:100%;text-align:center;position:relative;box-shadow:0 14px 44px rgba(0,0,0,.28);}
+.vc-close{position:absolute;top:9px;right:13px;background:none;border:none;font-size:1.6rem;line-height:1;color:var(--muted);cursor:pointer;}
+.vc-close:hover{color:var(--ink);}
+.vc-qrwrap{position:relative;display:inline-block;margin:8px 0 14px;}
+.vc-qr img,.vc-qr canvas{display:block;}
+.vc-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;border:3px solid #fff;object-fit:cover;box-shadow:0 0 0 1px var(--line);}
+.vc-name{font-family:'Source Serif 4',serif;font-weight:700;font-size:1.2rem;}
+.vc-sub{color:var(--muted);font-size:.82rem;margin-bottom:13px;}
+.vc-dl{display:inline-block;font-size:.85rem;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:6px 13px;}
+.vc-dl:hover{background:var(--accent);color:#fff;text-decoration:none;}
+.vc-hint{color:var(--muted);font-size:.72rem;margin-top:11px;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -113,10 +134,13 @@ footer{border-top:1px solid var(--line);margin-top:18px;padding-top:18px;color:v
 
   <!-- ═══════════ SIDEBAR ═══════════ -->
   <aside class="sidebar" id="top">
-    <div class="side-photo"><img src="photos/Pic2.png" alt="Pushpendra Raghav"></div>
+    <div class="side-photo" id="vcPhoto" title="Show QR code for virtual contact card">
+      <img src="photos/Pic2.png" alt="Pushpendra Raghav">
+    </div>
     <div class="side-name">Pushpendra Raghav</div>
     <div class="side-title">Research Engineer / Scientist</div>
     <div class="side-affil">Civil, Construction &amp; Environmental Engineering · The University of Alabama</div>
+    <a class="vc-trigger" id="vcLink" href="#"><i class="fa-solid fa-qrcode"></i>&nbsp; Virtual contact card</a>
 
     <div class="card">
       <div class="row"><i class="fa-solid fa-envelope"></i><a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a></div>
@@ -395,17 +419,31 @@ footer{border-top:1px solid var(--line);margin-top:18px;padding-top:18px;color:v
         Office 1033, Cyber Hall, 248 Kirkbride Ln, Tuscaloosa, AL 35401<br>
         <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a> · +1 313-742-3251
       </p>
-      <footer>
-        © <span id="yr"></span> Pushpendra Raghav · The University of Alabama
-      </footer>
+      <footer>© <span id="yr"></span> Pushpendra Raghav · The University of Alabama</footer>
     </section>
 
   </main>
 </div>
 
+<!-- ═══════════ VIRTUAL CONTACT CARD (QR) ═══════════ -->
+<div class="vc-modal" id="vcModal">
+  <div class="vc-box">
+    <button class="vc-close" onclick="closeVC()" aria-label="Close">&times;</button>
+    <div class="vc-qrwrap">
+      <div class="vc-qr" id="vcQr"></div>
+      <img class="vc-logo" src="photos/Pic2.png" alt="">
+    </div>
+    <div class="vc-name">Pushpendra Raghav</div>
+    <div class="vc-sub">Research Engineer · The University of Alabama</div>
+    <a class="vc-dl" id="vcDl" href="#">Download contact card (.vcf)</a>
+    <div class="vc-hint">Scan with your phone camera to save my contact, or download the card.</div>
+  </div>
+</div>
+
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
-// scrollspy: highlight current section in the sidebar nav
+
+/* scrollspy: highlight current section in the sidebar nav */
 (function(){
   var links=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]'));
   var map={}; links.forEach(function(a){var id=a.getAttribute('href').slice(1); if(id)map[id]=a;});
@@ -416,9 +454,37 @@ document.getElementById('yr').textContent=new Date().getFullYear();
         if(map[e.target.id])map[e.target.id].classList.add('active');
       }
     });
-  },{rootMargin:'-20% 0px -70% 0px',threshold:0});
+  },{rootMargin:'-15% 0px -75% 0px',threshold:0});
   document.querySelectorAll('.main section[id]').forEach(function(s){obs.observe(s);});
 })();
+
+/* virtual contact card (vCard QR) */
+var vcard=[
+  "BEGIN:VCARD","VERSION:3.0",
+  "N:Raghav;Pushpendra;;;","FN:Pushpendra Raghav",
+  "ORG:The University of Alabama","TITLE:Research Engineer / Scientist",
+  "EMAIL;TYPE=INTERNET,WORK:ppushpendra@ua.edu",
+  "TEL;TYPE=WORK,VOICE:+1-313-742-3251",
+  "ADR;TYPE=WORK:;;Cyber Hall Office 1033, 248 Kirkbride Ln;Tuscaloosa;AL;35401;USA",
+  "URL:https://praghav444.github.io",
+  "END:VCARD"
+].join("\r\n");
+var vcModal=document.getElementById('vcModal'), qrBuilt=false;
+function openVC(){
+  if(!qrBuilt && window.QRCode){
+    new QRCode(document.getElementById('vcQr'),{text:vcard,width:226,height:226,correctLevel:QRCode.CorrectLevel.H});
+    qrBuilt=true;
+  }
+  var dl=document.getElementById('vcDl');
+  dl.href='data:text/vcard;charset=utf-8,'+encodeURIComponent(vcard);
+  dl.setAttribute('download','Pushpendra_Raghav.vcf');
+  vcModal.classList.add('open');
+}
+function closeVC(){vcModal.classList.remove('open');}
+document.getElementById('vcPhoto').addEventListener('click',openVC);
+document.getElementById('vcLink').addEventListener('click',function(e){e.preventDefault();openVC();});
+vcModal.addEventListener('click',function(e){if(e.target===vcModal)closeVC();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVC();});
 </script>
 </body>
 </html>
