@@ -26,7 +26,7 @@ h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--ink);line-height
 
 /* layout */
 .layout{max-width:1120px;margin:0 auto;display:flex;gap:24px;padding:22px 22px 44px;align-items:flex-start;}
-.sidebar{flex:0 0 290px;width:290px;position:sticky;top:18px;align-self:flex-start;max-height:calc(100vh - 36px);
+.sidebar{flex:0 0 290px;width:290px;position:sticky;top:64px;align-self:flex-start;max-height:calc(100vh - 84px);
   overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-radius:12px;
   box-shadow:0 1px 3px rgba(20,30,40,.06);padding:24px 20px;text-align:center;}
 .main{flex:1 1 auto;min-width:0;}
@@ -61,7 +61,7 @@ h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--ink);line-height
 
 /* main section cards */
 .main section{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px 26px;
-  margin-bottom:20px;scroll-margin-top:16px;box-shadow:0 1px 3px rgba(20,30,40,.06);}
+  margin-bottom:20px;scroll-margin-top:66px;box-shadow:0 1px 3px rgba(20,30,40,.06);}
 .main section:last-child{margin-bottom:0;}
 .main h2{font-size:1.26rem;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--accent);}
 .lead{color:var(--muted);font-size:.93rem;margin:-6px 0 18px;}
@@ -126,9 +126,71 @@ footer{color:var(--muted);font-size:.82rem;}
 .vc-dl{display:inline-block;font-size:.85rem;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:6px 13px;}
 .vc-dl:hover{background:var(--accent);color:#fff;text-decoration:none;}
 .vc-hint{color:var(--muted);font-size:.72rem;margin-top:11px;line-height:1.5;}
+
+/* top banner + nav */
+.banner{height:150px;background:linear-gradient(rgba(13,30,28,.28),rgba(13,30,28,.38)), url('photos/Back_3.jpg') center 42%/cover no-repeat;}
+.banner-cap{max-width:1120px;margin:0 auto;height:100%;display:flex;align-items:flex-end;flex-wrap:wrap;gap:0 12px;padding:0 26px 16px;}
+.banner-cap .bt{color:#fff;font-family:'Source Serif 4',serif;font-weight:700;font-size:1.6rem;text-shadow:0 1px 8px rgba(0,0,0,.55);}
+.banner-cap .bs{color:rgba(255,255,255,.92);font-size:.82rem;padding-bottom:5px;text-shadow:0 1px 6px rgba(0,0,0,.6);}
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:50px;padding:0 22px;}
+.tb-brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1rem;color:var(--ink);}
+.tb-brand:hover{text-decoration:none;}
+.tb-nav{display:flex;align-items:center;gap:2px;}
+.tb-nav .tb-link,.tb-item>a{display:inline-block;font-size:.85rem;font-weight:500;color:var(--muted);padding:8px 12px;border-radius:6px;cursor:pointer;}
+.tb-nav .tb-link:hover,.tb-item>a:hover{color:var(--accent);background:var(--soft);text-decoration:none;}
+.tb-item{position:relative;}
+.tb-menu{position:absolute;top:100%;left:0;min-width:212px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(20,30,40,.16);padding:6px;display:none;z-index:50;}
+.tb-item:hover .tb-menu{display:block;}
+.tb-menu a{display:block;font-size:.84rem;color:var(--ink);padding:7px 10px;border-radius:5px;}
+.tb-menu a:hover{background:var(--soft);color:var(--accent);text-decoration:none;}
+@media(max-width:860px){.tb-nav{display:none;}.banner{height:108px;}.banner-cap .bs{display:none;}}
 </style>
 </head>
 <body>
+
+<div class="banner">
+  <div class="banner-cap">
+    <span class="bt">Pushpendra Raghav</span>
+    <span class="bs">Ecohydrology · Remote Sensing · Land Surface Modeling · Physics-Informed ML</span>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="tb-brand" href="#top">Pushpendra Raghav</a>
+    <nav class="tb-nav">
+      <div class="tb-item"><a>About&nbsp;&#9662;</a>
+        <div class="tb-menu">
+          <a href="#bio">Brief Bio</a>
+          <a href="#positions">Positions / Employment</a>
+          <a href="#education">Education</a>
+          <a href="#overview">Research at a Glance</a>
+          <a href="#interests">Research Interests</a>
+        </div>
+      </div>
+      <div class="tb-item"><a>Research&nbsp;&#9662;</a>
+        <div class="tb-menu">
+          <a href="#research">Selected Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#software">Software &amp; Data</a>
+          <a href="#press">Press</a>
+        </div>
+      </div>
+      <div class="tb-item"><a>CV&nbsp;&#9662;</a>
+        <div class="tb-menu">
+          <a href="#awards">Awards &amp; Honors</a>
+          <a href="#grants">Grants &amp; Proposals</a>
+          <a href="#talks">Invited Talks</a>
+          <a href="#service">Professional Service</a>
+          <a href="My_CV_NEW_Latest.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </div>
+      </div>
+      <a class="tb-link" href="gallery.html">Gallery</a>
+      <a class="tb-link" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
 <div class="layout">
 
@@ -160,12 +222,12 @@ footer{color:var(--muted);font-size:.82rem;}
 
     <nav class="sidenav" id="sidenav">
       <a href="#bio">Brief Bio</a>
+      <a href="#positions">Positions / Employment</a>
+      <a href="#education">Education</a>
       <a href="#overview">Research at a Glance</a>
       <a href="#interests">Research Interests</a>
       <a href="#research">Selected Research</a>
       <a href="#publications">Publications</a>
-      <a href="#positions">Positions / Employment</a>
-      <a href="#education">Education</a>
       <a href="#awards">Awards &amp; Honors</a>
       <a href="#grants">Grants &amp; Proposals</a>
       <a href="#talks">Invited Talks</a>
@@ -200,6 +262,22 @@ footer{color:var(--muted);font-size:.82rem;}
         M.Tech. from IIT Bombay. I am also a co-inventor of <strong>PULSE</strong>, a method that uses potential
         water-use efficiency to correct eddy-covariance latent heat flux measurements for energy imbalance.
       </p>
+    </section>
+
+    <section id="positions">
+      <h2>Positions / Employment</h2>
+      <div class="item"><span class="h">Research Engineer</span> · The University of Alabama<br><span class="s">Dec 2024 – present</span></div>
+      <div class="item"><span class="h">Postdoctoral Associate</span> · The University of Alabama<br><span class="s">Dec 2023 – Dec 2024</span></div>
+      <div class="item"><span class="h">Graduate Research Assistant</span> · The University of Alabama<br><span class="s">Aug 2019 – Dec 2023</span></div>
+      <div class="item"><span class="h">Junior Research Fellow</span> · IIT Bombay<br><span class="s">Jun 2018 – Jul 2019</span></div>
+      <div class="item"><span class="h">Graduate Teaching Assistant</span> · IIT Bombay<br><span class="s">Jul 2016 – Jun 2018</span></div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item"><span class="h">Ph.D., Civil Engineering (Ecohydrology)</span> · The University of Alabama<br><span class="s">2023 · Advisor: Mukesh Kumar</span></div>
+      <div class="item"><span class="h">M.Tech., Water Resources Engineering</span> · IIT Bombay<br><span class="s">2018 · Advisor: T. I. Eldho</span></div>
+      <div class="item"><span class="h">B.Tech., Civil Engineering</span> · Dr. A.P.J. Abdul Kalam Technical University<br><span class="s">2016</span></div>
     </section>
 
     <section id="overview">
@@ -323,22 +401,6 @@ footer{color:var(--muted);font-size:.82rem;}
       <ul class="pubs">
         <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Eldho, T. I. (2021). Assessing the impacts of climate change on crop yield in the Upper Godavari River sub-basin using the H08 hydrological model. In <span class="venue">Climate Change Impacts on Water Resources,</span> 193–205. Springer. <a class="doi" href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank" rel="noopener">DOI</a></li>
       </ul>
-    </section>
-
-    <section id="positions">
-      <h2>Positions / Employment</h2>
-      <div class="item"><span class="h">Research Engineer</span> · The University of Alabama<br><span class="s">Dec 2024 – present</span></div>
-      <div class="item"><span class="h">Postdoctoral Associate</span> · The University of Alabama<br><span class="s">Dec 2023 – Dec 2024</span></div>
-      <div class="item"><span class="h">Graduate Research Assistant</span> · The University of Alabama<br><span class="s">Aug 2019 – Dec 2023</span></div>
-      <div class="item"><span class="h">Junior Research Fellow</span> · IIT Bombay<br><span class="s">Jun 2018 – Jul 2019</span></div>
-      <div class="item"><span class="h">Graduate Teaching Assistant</span> · IIT Bombay<br><span class="s">Jul 2016 – Jun 2018</span></div>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-      <div class="item"><span class="h">Ph.D., Civil Engineering (Ecohydrology)</span> · The University of Alabama<br><span class="s">2023 · Advisor: Mukesh Kumar</span></div>
-      <div class="item"><span class="h">M.Tech., Water Resources Engineering</span> · IIT Bombay<br><span class="s">2018 · Advisor: T. I. Eldho</span></div>
-      <div class="item"><span class="h">B.Tech., Civil Engineering</span> · Dr. A.P.J. Abdul Kalam Technical University<br><span class="s">2016</span></div>
     </section>
 
     <section id="awards">
