@@ -4,428 +4,421 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pushpendra Raghav</title>
-<meta name="description" content="Pushpendra Raghav — Research Engineer at the University of Alabama. Ecohydrology, evapotranspiration, soil moisture, land surface modeling, and physics-informed machine learning.">
+<meta name="description" content="Pushpendra Raghav — Research Engineer at the University of Alabama. Ecohydrology, evapotranspiration, soil moisture, remote sensing, land surface modeling, and physics-informed machine learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <style>
 :root{
-  --ink:#1b1d1f;
-  --muted:#6a6f76;
-  --line:#e6e8ea;
-  --accent:#2f6f7e;
-  --accent-dark:#235862;
-  --bg:#ffffff;
-  --maxw:920px;
+  --ink:#1b1d1f; --muted:#6a6f76; --line:#e3e6e8;
+  --accent:#2f6f7e; --accent-dark:#235862; --bg:#ffffff; --soft:#f6f8f9;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
+body{margin:0;background:var(--bg);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:16.5px;line-height:1.72;-webkit-font-smoothing:antialiased;
-}
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
 a:hover{color:var(--accent-dark);text-decoration:underline;}
-h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;font-weight:700;line-height:1.2;color:var(--ink);}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--ink);line-height:1.2;}
 
-/* ── top nav ── */
-nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;}
-nav .brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1rem;color:var(--ink);}
-nav .brand:hover{text-decoration:none;}
-nav .links a{color:var(--muted);font-size:.86rem;font-weight:500;margin-left:1.35rem;}
-nav .links a:hover{color:var(--accent);text-decoration:none;}
-@media(max-width:620px){
-  nav .wrap{height:auto;flex-direction:column;align-items:flex-start;padding-top:8px;padding-bottom:8px;}
-  nav .links{margin-top:2px;}
-  nav .links a:first-child{margin-left:0;}
+/* layout */
+.layout{max-width:1100px;margin:0 auto;display:flex;gap:44px;padding:0 24px;}
+.sidebar{flex:0 0 282px;width:282px;position:sticky;top:0;align-self:flex-start;
+  max-height:100vh;overflow-y:auto;padding:30px 0 24px;}
+.main{flex:1 1 auto;min-width:0;padding:34px 0 64px;}
+@media(max-width:840px){
+  .layout{flex-direction:column;gap:0;}
+  .sidebar{position:static;width:auto;max-height:none;flex:none;padding:26px 0 18px;border-bottom:1px solid var(--line);}
+  .main{padding:24px 0 50px;}
 }
 
-/* ── header ── */
-header{padding:64px 0 30px;}
-.head-grid{display:flex;gap:38px;align-items:flex-start;}
-.head-text{flex:1 1 auto;}
-.head-photo{flex:0 0 150px;}
-.head-photo img{width:150px;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line);}
-h1{font-size:2.5rem;margin:0 0 6px;letter-spacing:-.3px;}
-.role{font-size:1rem;color:var(--ink);font-weight:500;margin:0 0 2px;}
-.affil{font-size:.92rem;color:var(--muted);margin:0 0 18px;}
-.bio{font-size:1rem;margin:0 0 18px;}
-.links-row{font-size:.9rem;}
-.links-row a{display:inline-block;margin-right:14px;white-space:nowrap;}
-.links-row a:hover{text-decoration:none;}
-.icns a{font-size:1.32rem;color:var(--ink);margin-right:21px;display:inline-block;line-height:1;}
-.icns a:hover{color:var(--accent);text-decoration:none;}
-.icns .fa-file-pdf{font-size:1.2rem;}
-@media(max-width:620px){
-  header{padding:40px 0 20px;}
-  .head-grid{flex-direction:column-reverse;gap:20px;}
-  .head-photo{align-self:flex-start;}
-  h1{font-size:2.1rem;}
-}
+/* sidebar */
+.side-photo img{width:152px;height:152px;object-fit:cover;border-radius:8px;border:1px solid var(--line);}
+.side-name{font-size:1.55rem;font-weight:700;margin:16px 0 2px;}
+.side-title{font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent-dark);font-weight:600;margin-bottom:6px;}
+.side-affil{font-size:.84rem;color:var(--muted);margin-bottom:14px;}
+.card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:13px 14px;font-size:.83rem;line-height:1.5;margin-bottom:14px;}
+.card .row{display:flex;gap:9px;margin-bottom:8px;}
+.card .row:last-child{margin-bottom:0;}
+.card i{color:var(--accent);width:15px;text-align:center;margin-top:3px;flex:0 0 15px;}
+.card a{word-break:break-word;}
+.side-icns{margin-bottom:16px;}
+.side-icns a{font-size:1.16rem;color:var(--ink);margin-right:15px;display:inline-block;}
+.side-icns a:hover{color:var(--accent);text-decoration:none;}
+.sidenav{border-top:1px solid var(--line);padding-top:10px;}
+.sidenav a{display:block;font-size:.85rem;color:var(--muted);padding:5px 0;border-left:2px solid transparent;padding-left:10px;margin-left:-2px;}
+.sidenav a:hover{color:var(--accent);text-decoration:none;}
+.sidenav a.active{color:var(--accent-dark);border-left-color:var(--accent);font-weight:600;}
 
-/* ── sections ── */
-section{padding:34px 0;border-top:1px solid var(--line);}
-section h2{font-size:1.32rem;margin:0 0 20px;}
-.lead{color:var(--muted);font-size:.95rem;margin:-8px 0 22px;}
+/* main sections */
+.main section{padding:14px 0 26px;scroll-margin-top:14px;}
+.main section:first-child{padding-top:0;}
+.main h2{font-size:1.28rem;margin:0 0 16px;padding-bottom:7px;border-bottom:2px solid var(--accent);}
+.lead{color:var(--muted);font-size:.93rem;margin:-6px 0 18px;}
+p{margin:0 0 14px;}
 
-/* selected research highlights */
-.hl{padding-left:16px;border-left:2px solid var(--accent);margin-bottom:22px;}
-.hl .t{font-weight:600;font-size:1.02rem;color:var(--ink);}
-.hl .m{color:var(--muted);font-size:.85rem;margin:2px 0 6px;}
-.hl .d{font-size:.97rem;}
-.hl a.doi{font-size:.82rem;margin-left:2px;}
+/* research interests bullets */
+.bullets{margin:0;padding-left:20px;}
+.bullets li{margin-bottom:8px;}
+
+/* selected research */
+.hl{padding-left:15px;border-left:2px solid var(--accent);margin-bottom:20px;}
+.hl .t{font-weight:600;font-size:1.0rem;}
+.hl .m{color:var(--muted);font-size:.84rem;margin:2px 0 6px;}
+.hl .d{font-size:.95rem;}
 
 /* press */
-.press{display:flex;gap:24px;align-items:flex-start;}
-.press-img img{width:250px;height:165px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block;transition:opacity .15s;}
+.press{display:flex;gap:22px;align-items:flex-start;}
+.press-img img{width:230px;height:152px;object-fit:cover;border-radius:6px;border:1px solid var(--line);display:block;}
 .press-img:hover img{opacity:.92;}
-.press-body{flex:1;}
-.press-body .t{font-weight:600;font-size:1.05rem;}
-.press-body .m{color:var(--muted);font-size:.85rem;margin:2px 0 7px;}
-.press-body .d{font-size:.97rem;}
-.press-body .credit{color:var(--muted);font-size:.75rem;margin-top:8px;}
-@media(max-width:620px){.press{flex-direction:column;gap:14px;}.press-img img{width:100%;height:200px;}}
+.press-body{flex:1;min-width:0;}
+.press-body .t{font-weight:600;font-size:1.02rem;}
+.press-body .m{color:var(--muted);font-size:.84rem;margin:2px 0 6px;}
+.press-body .credit{color:var(--muted);font-size:.74rem;margin-top:7px;}
+@media(max-width:560px){.press{flex-direction:column;gap:12px;}.press-img img{width:100%;height:190px;}}
 
-/* research-at-a-glance */
-.glance-fig{display:block;margin-top:4px;}
+/* glance figure */
 .glance-fig img{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;}
 .glance-fig:hover img{opacity:.96;}
-.glance-cap{color:var(--muted);font-size:.78rem;margin-top:8px;}
+.glance-cap{color:var(--muted);font-size:.78rem;margin:8px 0 14px;}
 
-/* publication lists */
-.pubs{list-style:none;margin:0;padding:0;counter-reset:none;}
-.pubs li{position:relative;padding:0 0 16px 34px;font-size:.95rem;}
-.pubs li .n{position:absolute;left:0;top:0;color:var(--muted);font-size:.82rem;font-variant-numeric:tabular-nums;}
-.pubs li .venue{font-style:italic;color:#3a3f45;}
-.pubs li .doi{font-size:.8rem;white-space:nowrap;}
-.tag{font-size:.7rem;font-weight:600;letter-spacing:.3px;text-transform:uppercase;
-  color:var(--accent-dark);border:1px solid var(--line);border-radius:3px;padding:1px 6px;margin-right:6px;}
-.subhead{font-family:'Inter',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.8px;
-  text-transform:uppercase;color:var(--muted);margin:26px 0 14px;}
+/* publications */
+.subhead{font-weight:600;font-size:.76rem;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin:22px 0 12px;}
 .subhead:first-child{margin-top:0;}
+.pubs{list-style:none;margin:0;padding:0;}
+.pubs li{position:relative;padding:0 0 14px 32px;font-size:.93rem;}
+.pubs li .n{position:absolute;left:0;top:0;color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums;}
+.pubs li .venue{font-style:italic;color:#3a3f45;}
+.pubs li .doi{font-size:.79rem;white-space:nowrap;}
+.tag{font-size:.68rem;font-weight:600;letter-spacing:.3px;text-transform:uppercase;color:var(--accent-dark);
+  border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-right:5px;}
 
-/* two-column compact lists */
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;}
-@media(max-width:620px){.row2{grid-template-columns:1fr;}}
-.item{font-size:.94rem;margin-bottom:14px;}
-.item .h{font-weight:600;}
-.item .s{color:var(--muted);font-size:.86rem;}
+/* simple lists / items */
 .simple{margin:0;padding:0;list-style:none;}
-.simple li{font-size:.94rem;padding:0 0 11px 0;}
-.simple li .when{color:var(--muted);font-size:.85rem;}
-.inline-list{color:var(--ink);font-size:.94rem;}
+.simple li{font-size:.93rem;padding:0 0 10px 0;}
+.simple li .when{color:var(--muted);font-size:.84rem;}
+.item{font-size:.93rem;margin-bottom:13px;}
+.item .h{font-weight:600;}
+.item .s{color:var(--muted);font-size:.85rem;}
+.inline-list{font-size:.93rem;}
 
-footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:.85rem;}
-footer a{color:var(--muted);}footer a:hover{color:var(--accent);}
-.backlink{margin-top:8px;}
+footer{border-top:1px solid var(--line);margin-top:18px;padding-top:18px;color:var(--muted);font-size:.82rem;}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a class="brand" href="#top">Pushpendra Raghav</a>
-    <div class="links">
-      <a href="#overview">Overview</a>
-      <a href="#research">Research</a>
-      <a href="#press">Press</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#cv">CV</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+<div class="layout">
 
-<a id="top"></a>
-<header>
-  <div class="wrap">
-    <div class="head-grid">
-      <div class="head-text">
-        <h1>Pushpendra Raghav</h1>
-        <p class="role">Research Engineer</p>
-        <p class="affil">Dept. of Civil, Construction &amp; Environmental Engineering · The University of Alabama</p>
-        <p class="bio">
-          I work at the intersection of ecohydrology, Earth system science, and data science. By combining
-          eddy-covariance flux observations, satellite remote sensing (including next-generation high-resolution
-          thermal/SAR/optical missions e.g., Hydrosat's VanZyl constellation, NISAR, etc.), land surface models, and physics-informed
-          machine learning (for improved model parameterization and structural modifications of land surface models), I work to improve how we observe and predict evapotranspiration along with its individual components (i.e., direct soil/canopy evaporation and plant transpiration), soil moisture (both surface and root-zone), and
-          eco-hydrological extremes such as plant mortality, droughts and floods. Currently, I work with
-          <a href="https://mkumar.people.ua.edu/" target="_blank" rel="noopener">Prof. Mukesh Kumar</a> at the University of Alabama.
-        </p>
-        <p class="icns">
-          <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
-          <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
-          <a href="https://www.researchgate.net/profile/Pushpendra-Raghav-2" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-          <a href="https://github.com/praghav444" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/praghav444" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="My_CV_NEW_Latest.pdf" target="_blank" rel="noopener" title="Curriculum Vitae (PDF)" aria-label="CV"><i class="fa-solid fa-file-pdf"></i></a>
-          <a href="mailto:ppushpendra@ua.edu" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </p>
-      </div>
-      <div class="head-photo">
-        <img src="photos/Pic2.png" alt="Pushpendra Raghav">
-      </div>
-    </div>
-  </div>
-</header>
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="sidebar" id="top">
+    <div class="side-photo"><img src="photos/Pic2.png" alt="Pushpendra Raghav"></div>
+    <div class="side-name">Pushpendra Raghav</div>
+    <div class="side-title">Research Engineer / Scientist</div>
+    <div class="side-affil">Civil, Construction &amp; Environmental Engineering · The University of Alabama</div>
 
-<!-- ── RESEARCH AT A GLANCE ── -->
-<section id="overview">
-  <div class="wrap">
-    <h2>Research at a Glance</h2>
-    <p class="lead">From observations to predictions to decisions....</p>
-    <a class="glance-fig" href="Figures/ResearchGlance.jpg" target="_blank" rel="noopener">
-      <img src="Figures/ResearchGlance.jpg" alt="Overview of my research: ground observations and satellite remote sensing constrain land surface and physics-informed machine-learning models to improve water-cycle predictions and early-warning tools.">
-    </a>
-    <p class="glance-cap">Click to enlarge.</p>
-    <p style="margin-top:16px;">
-      I combine <strong>ground-based observations</strong> (e.g., eddy-covariance water &amp; carbon fluxes (FLUXNET),
-      plant water use (SAPFLUXNET, PSInet)) with <strong>satellite remote sensing</strong> across the thermal, optical, and LiDAR domains
-      (ECOSTRESS, MODIS, Landsat, GEDI, and next-generation missions such as Hydrosat's VanZyl constellation, NISAR)
-      to <strong>validate and constrain</strong> land surface models (ELM, CLM, ECOSYS) and <strong>physics-informed
-      machine learning</strong> for improved parameterization and structure of LSMs.
-    </p>
-    <p>
-      The goal is to better observe and predict the <strong>land water cycle</strong> (evapotranspiration and its
-      partitioning into <strong>plant transpiration vs. soil evaporation</strong>, <strong>soil moisture</strong>,
-      and <strong>stomatal conductance</strong>) and to turn those improvements into tools that matter for people:
-      <strong>drought detection, flood forecasting, numerical weather prediction, and early warning</strong> of
-      hydrological extremes.
-    </p>
-  </div>
-</section>
-
-<!-- ── SELECTED RESEARCH ── -->
-<section id="research">
-  <div class="wrap">
-    <h2>Selected Research</h2>
-    <p class="lead">A few studies that capture the direction of my work. Full list below.</p>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1029/2025GL114822" target="_blank" rel="noopener">Surface Flux Equilibrium theory–derived evapotranspiration outperforms ECOSTRESS, MODIS, and SSEBop</a></div>
-      <div class="m">Thakur, Raghav &amp; Kumar · Geophysical Research Letters · 2025</div>
-      <div class="d">A calibration-free ET estimate built on Surface Flux Equilibrium theory matches or exceeds leading operational satellite ET products across CONUS flux sites (with no site-specific tuning).</div>
+    <div class="card">
+      <div class="row"><i class="fa-solid fa-envelope"></i><a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a></div>
+      <div class="row"><i class="fa-solid fa-phone"></i><span>+1 313-742-3251</span></div>
+      <div class="row"><i class="fa-solid fa-location-dot"></i><span>Office 1033, Cyber Hall, 248 Kirkbride Ln, Tuscaloosa, AL 35401</span></div>
+      <div class="row"><i class="fa-solid fa-building-columns"></i><span>The University of Alabama</span></div>
     </div>
 
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1029/2024WR037652" target="_blank" rel="noopener">Structural constraints in current stomatal conductance models preclude accurate ET prediction</a></div>
-      <div class="m">Raghav, Kumar &amp; Liu · Water Resources Research · 2024</div>
-      <div class="d">Using physics-informed machine learning across FLUXNET, widely used stomatal conductance models are shown to share structural limitations that prevent accurate ET prediction under combined water and heat stress.</div>
-    </div>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" rel="noopener">Are ecosystem-level evaporative stress indices representative of vegetation stress?</a></div>
-      <div class="m">Raghav &amp; Kumar · Agricultural and Forest Meteorology · 2024</div>
-      <div class="d">Ecosystem-scale evaporative stress indices (e.g., from ECOSTRESS) can misrepresent true vegetation stress especially during high atmospheric water demand or dry periods with consequences for satellite-based drought monitoring.</div>
-    </div>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1029/2022WR032067" target="_blank" rel="noopener">Vegetation index–based partitioning of evapotranspiration is deficient in grazed systems</a></div>
-      <div class="m">Raghav, Wagle, Kumar, Banerjee &amp; Neel · Water Resources Research · 2022</div>
-      <div class="d">The common vegetation-index approach to separating transpiration from soil evaporation breaks down in grazed and managed grasslands, cautioning against its use in agricultural landscapes.</div>
-    </div>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank" rel="noopener">Retrieving gap-free daily root-zone soil moisture using Surface Flux Equilibrium theory</a></div>
-      <div class="m">Raghav &amp; Kumar · Environmental Research Letters · 2021</div>
-      <div class="d">Introduces a calibration-free method to estimate continuous daily root-zone soil moisture from standard meteorology, validated across Mesonet sites spanning diverse biomes.</div>
-    </div>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">PULSE: correcting eddy-covariance latent heat fluxes for surface energy imbalance</a></div>
-      <div class="m">Raghav &amp; Kumar · Water Resources Research · 2026</div>
-      <div class="d">A new method that leverages the potential underlying water-use-efficiency–ET relationship to correct measured latent heat fluxes for the long-standing eddy-covariance energy-imbalance problem.</div>
-    </div>
-
-    <div class="hl">
-      <div class="t"><a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" rel="noopener">Revamping the extended-range forecast of the Indian Summer Monsoon</a></div>
-      <div class="m">Raghav, Borkotoky, Joseph, Chattopadhyay, Sahai &amp; Ghosh · Climate Dynamics · 2020</div>
-      <div class="d">A revamped statistical–dynamical framework improves extended-range (2-4 week) forecast skill of the dynamic Extended Range Prediction System for the Indian Summer Monsoon which delivers most of India's annual rainfall and underpins water and agricultural planning for over a billion people.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PRESS ── -->
-<section id="press">
-  <div class="wrap">
-    <h2>Press</h2>
-    <div class="press">
-      <a class="press-img" href="https://eos.org/research-spotlights/improving-eddy-tower-evapotranspiration-estimates" target="_blank" rel="noopener">
-        <img src="photos/eos_flux_tower.jpg" alt="Eddy-covariance flux tower — Eos research spotlight">
-      </a>
-      <div class="press-body">
-        <div class="t"><a href="https://eos.org/research-spotlights/improving-eddy-tower-evapotranspiration-estimates" target="_blank" rel="noopener">Improving Eddy Tower Evapotranspiration Estimates</a></div>
-        <div class="m">Eos (AGU) · Research Spotlight · by Rebecca Dzombak · May 2026</div>
-        <div class="d">Featured coverage of our <strong>PULSE</strong> method for correcting eddy-covariance evapotranspiration measurements for surface energy imbalance using potential water-use efficiency (<a href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">Raghav &amp; Kumar, 2026, <em>Water Resources Research</em></a>).</div>
-        <div class="credit">Image via Eos</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PUBLICATIONS ── -->
-<section id="publications">
-  <div class="wrap">
-    <h2>Publications</h2>
-    <p class="lead"><span class="tag">FA</span> first author &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp;
-      see also <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
-
-    <div class="subhead">Peer-reviewed journal articles</div>
-    <ul class="pubs">
-      <li><span class="n">15</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). PULSE: A novel potential underlying water-use-efficiency-based method for latent heat and surface energy imbalance correction. <span class="venue">Water Resources Research.</span> <a class="doi" href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">14</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Dynamic parameterization of the Priestley–Taylor coefficient for more accurate potential evapotranspiration estimation in ungauged regions. <span class="venue">Environmental Research Letters.</span> <a class="doi" href="https://doi.org/10.1088/1748-9326/ae6464" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">13</span>Massoud, E. C., Collier, N., Wang, Y., Mao, J., Harpold, A., Kannenberg, S. A., Koren, G., Kumar, M., <strong>Raghav, P.</strong>, Ray, P., Shi, M., Tao, J., Vasu, S. P., Wang, H., Zhu, Q., &amp; Hoffman, F. M. (2026). Benchmarking soil moisture and its relationship to ecohydrologic variables in Earth system models. <span class="venue">Geoscientific Model Development, 19,</span> 3427. <a class="doi" href="https://doi.org/10.5194/gmd-19-3427-2026" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">12</span>Salvi, K., <strong>Raghav, P.</strong>, Kumar, M., Magliocca, N., &amp; Bisht, G. (2026). Discrepancy in the sign of temperature trends in reanalysis datasets. <span class="venue">Environmental Research Letters.</span> <a class="doi" href="https://doi.org/10.1088/1748-9326/ae5726" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">11</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). How well does the Evaporative Stress Index from ECOSTRESS capture site-based stresses? <span class="venue">Canadian Journal of Remote Sensing, 52</span>(1). <a class="doi" href="https://doi.org/10.1080/07038992.2026.2645742" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">10</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2025). Surface Flux Equilibrium theory–derived evapotranspiration estimate outperforms ECOSTRESS, MODIS, and SSEBop products. <span class="venue">Geophysical Research Letters, 52</span>(10), e2025GL114822. <a class="doi" href="https://doi.org/10.1029/2025GL114822" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">9</span>Ghaseminejad, A., Bhat, N., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2025). Influence of interannual leaf phenology dynamics on evapotranspiration predictions. <span class="venue">Journal of Hydrometeorology, 26,</span> 259–272. <a class="doi" href="https://doi.org/10.1175/JHM-D-24-0061.1" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">8</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2024). Are the ecosystem-level evaporative stress indices representative of evaporative stress of vegetation? <span class="venue">Agricultural and Forest Meteorology, 357,</span> 110195. <a class="doi" href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">7</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Kumar, M., &amp; Liu, Y. (2024). Structural constraints in current stomatal conductance models preclude accurate prediction of evapotranspiration. <span class="venue">Water Resources Research, 60</span>(8), e2024WR037652. <a class="doi" href="https://doi.org/10.1029/2024WR037652" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">6</span>Rathore, L. S., Hanasaki, N., Kumar, M., Mekonnen, M., &amp; <strong>Raghav, P.</strong> (2023). Water scarcity challenges across urban regions with expanding irrigation. <span class="venue">Environmental Research Letters, 19</span>(1), 014065. <a class="doi" href="https://doi.org/10.1088/1748-9326/ad178a" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">5</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Eldho, T. I. (2023). Investigations on the hydrological impacts of climate change on a river basin using macroscale model H08. <span class="venue">Journal of Earth System Science, 132</span>(2), 87. <a class="doi" href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">4</span><span class="tag">FA</span> Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong><sup>*</sup>, Kumar, M., &amp; Gunter, A. G. (2022). Influence of water-use efficiency parameterizations on flux-variance-similarity-based partitioning of evapotranspiration. <span class="venue">Agricultural and Forest Meteorology, 328,</span> 109254. <a class="doi" href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">3</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Wagle, P., Kumar, M., Banerjee, T., &amp; Neel, J. P. S. (2022). Vegetation index–based partitioning of evapotranspiration is deficient in grazed systems. <span class="venue">Water Resources Research, 58</span>(8), e2022WR032067. <a class="doi" href="https://doi.org/10.1029/2022WR032067" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">2</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2021). Retrieving gap-free daily root-zone soil moisture using Surface Flux Equilibrium theory. <span class="venue">Environmental Research Letters, 16</span>(10), 104007. <a class="doi" href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank" rel="noopener">DOI</a></li>
-      <li><span class="n">1</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Borkotoky, S. S., Joseph, J., Chattopadhyay, R., Sahai, A. K., &amp; Ghosh, S. (2020). Revamping extended-range forecast of the Indian Summer Monsoon. <span class="venue">Climate Dynamics, 55,</span> 3397–3411. <a class="doi" href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" rel="noopener">DOI</a></li>
-    </ul>
-
-    <div class="subhead">Under review / in revision</div>
-    <ul class="pubs">
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, Liu, Y., Kumar, M., &amp; Bisht, G. (2026). Multilayer canopy model outperforms big-leaf model for evapotranspiration predictions under high water and heat stress conditions. <span class="venue">Journal of Advances in Modeling Earth Systems.</span></li>
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Padé approximation of the Clausius–Clapeyron relation: an explicit and computationally efficient alternative to the Penman–Monteith equation. <span class="venue">Geophysical Research Letters.</span></li>
-      <li><span class="n">·</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Benchmark data of root-zone soil moisture over the conterminous USA based on vegetation-specific rooting depths. <span class="venue">Vadose Zone Journal.</span></li>
-      <li><span class="n">·</span>Wolkeba, F. T., <strong>Raghav, P.</strong>, Kumar, M., &amp; Thakur, H. (2026). CALFRET: a high-performing, calibration-free 1-km evapotranspiration product over the conterminous USA. <span class="venue">Water Resources Research.</span> <a class="doi" href="https://doi.org/10.22541/essoar.175915560.04888321/v3" target="_blank" rel="noopener">Preprint</a></li>
-      <li><span class="n">·</span>Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong>, Kumar, M., Scanlon, T. M., Northup, B. K., Moffet, C., Gunter, S., &amp; Xiao, X. (2026). Partitioning evapotranspiration in C3–C4 mixed tallgrass prairies. <span class="venue">Agricultural Water Management.</span></li>
-    </ul>
-
-    <div class="subhead">In preparation</div>
-    <ul class="pubs">
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Large underestimation of flash drought events in reanalysis data. <span class="venue">In prep. for Geophysical Research Letters.</span></li>
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Evapotranspiration dynamics and partitioning in soybean under different irrigation practices. <span class="venue">In prep. for Agricultural and Forest Meteorology.</span></li>
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Forbrich, I. (2026). Evapotranspiration partitioning in tidal wetlands across hydrological, salinity, and vegetation gradients. <span class="venue">In preparation.</span></li>
-      <li><span class="n">·</span>Moreno, H., Massoud, E., Yaari, A., Huang, J., Koren, G., <strong>Raghav, P.</strong>, et al. (2026). How is artificial intelligence enhancing soil moisture estimation and prediction? <span class="venue">In preparation.</span></li>
-      <li><span class="n">·</span>Desai, A., Wanner, L., Levy, P., Zhang, W., Durden, D., Metzger, S., <strong>Raghav, P.</strong>, et al. (2026). Evaluating mechanistic corrections for surface energy imbalance in eddy covariance. <span class="venue">In preparation.</span></li>
-    </ul>
-
-    <div class="subhead">Book chapter</div>
-    <ul class="pubs">
-      <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Eldho, T. I. (2021). Assessing the impacts of climate change on crop yield in the Upper Godavari River sub-basin using the H08 hydrological model. In <span class="venue">Climate Change Impacts on Water Resources,</span> 193–205. Springer. <a class="doi" href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank" rel="noopener">DOI</a></li>
-    </ul>
-
-    <div class="subhead">Software &amp; data</div>
-    <ul class="simple">
-      <li>Getting started with Hydrosat satellite data — STAC access, LST, NDVI &amp; red-edge indices, cloud masking, and geospatial analysis. <a href="https://github.com/praghav444/hydrosat-getting-started" target="_blank" rel="noopener">GitHub</a> <span class="when">· 2026</span></li>
-      <li>Evaluating multilayer vs. big-leaf canopy models for evapotranspiration under water and heat stress. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Jan 2026</span></li>
-      <li>Dynamic parameterization of the Priestley–Taylor coefficient for potential ET in ungauged regions. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Nov 2025</span></li>
-      <li>PULSE — correcting eddy-covariance latent heat fluxes for energy imbalance via potential water-use efficiency. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Oct 2025</span></li>
-      <li>Water flux partitioning using flux-variance-similarity theory in wetland settings. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Oct 2025</span></li>
-      <li>Guide to downloading and processing remote sensing data in R. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Apr 2025</span></li>
-      <li>Information-theory-based model performance diagnostics. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Aug 2024</span></li>
-      <li>Ecosystem-scale transpiration from the SAPFLUXNET database. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Apr 2024</span></li>
-      <li>Water flux partitioning using high-frequency eddy-covariance data. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> · <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Aug 2023</span></li>
-      <li>Physical and machine-learning models of stomatal conductance for ET prediction. <a href="https://zenodo.org/record/7768479" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Mar 2023</span></li>
-      <li>Water flux partitioning data in disturbed (grazed) wheat systems. <a href="https://doi.org/10.15482/USDA.ADC/1527834" target="_blank" rel="noopener">USDA Ag Data Commons</a> <span class="when">· Aug 2022</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ── EXPERIENCE & EDUCATION ── -->
-<section id="experience">
-  <div class="wrap">
-    <h2>Experience &amp; Education</h2>
-    <div class="row2">
-      <div>
-        <div class="subhead">Appointments</div>
-        <div class="item"><span class="h">Research Engineer</span> · Univ. of Alabama<br><span class="s">Dec 2024 – present</span></div>
-        <div class="item"><span class="h">Postdoctoral Associate</span> · Univ. of Alabama<br><span class="s">Dec 2023 – Dec 2024</span></div>
-        <div class="item"><span class="h">Graduate Research Assistant</span> · Univ. of Alabama<br><span class="s">Aug 2019 – Dec 2023</span></div>
-        <div class="item"><span class="h">Junior Research Fellow</span> · IIT Bombay<br><span class="s">Jun 2018 – Jul 2019</span></div>
-        <div class="item"><span class="h">Graduate Teaching Assistant</span> · IIT Bombay<br><span class="s">Jul 2016 – Jun 2018</span></div>
-      </div>
-      <div>
-        <div class="subhead">Education</div>
-        <div class="item"><span class="h">Ph.D., Civil Engineering (Ecohydrology)</span><br>The University of Alabama<br><span class="s">2023 · Advisor: Mukesh Kumar</span></div>
-        <div class="item"><span class="h">M.Tech., Water Resources Engineering</span><br>IIT Bombay<br><span class="s">2018 · Advisor: T. I. Eldho</span></div>
-        <div class="item"><span class="h">B.Tech., Civil Engineering</span><br>Dr. A.P.J. Abdul Kalam Technical University<br><span class="s">2016</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── AWARDS / GRANTS / TALKS / SERVICE ── -->
-<section id="cv">
-  <div class="wrap">
-    <h2>Awards, Grants &amp; Service</h2>
-
-    <div class="subhead">Awards &amp; honors</div>
-    <ul class="simple">
-      <li>Travel Grant, AGU Energy Balance Chapman Conference, Boulder, CO <span class="when">— 2025</span></li>
-      <li>Outstanding Dissertation Award, Dept. of Civil, Construction &amp; Environmental Engineering, Univ. of Alabama <span class="when">— 2025</span></li>
-      <li>Top rank, M.Tech Water Resources Engineering, IIT Bombay <span class="when">— 2018</span></li>
-      <li>Ministry of Human Resource Development (MHRD), India scholarship <span class="when">— 2016–2018</span></li>
-    </ul>
-
-    <div class="subhead">Selected grants &amp; proposals</div>
-    <ul class="simple">
-      <li>VIEW-2 (Virtual Institute for Earth's Water) — <em>FLARE: field-scale retrieval of plant water use and ecosystem resilience from space</em> <span class="when">— EOI submitted, 2026</span></li>
-      <li>U.S. DOE (BER, DE-FOA-0003600) — ML-enhanced energy &amp; water partitioning in the E3SM Land Model over the Southeastern U.S. <span class="when">— under review, 2026</span></li>
-      <li>USDA ARS AI Innovation Fund — high-resolution root-zone soil moisture over CONUS via SFE-informed ML <span class="when">— under review, 2026</span></li>
-      <li>AGU Chapman Travel Grant — WUE-based correction of eddy-covariance latent heat fluxes <span class="when">— approved, 2025</span></li>
-    </ul>
-
-    <div class="subhead">Invited talks</div>
-    <ul class="simple">
-      <li>Advancing measurements and modeling of invisible components of the water budget — AGU Fall Meeting, New Orleans <span class="when">— 2025</span></li>
-      <li>Flux partitioning in wetland systems — AmeriFlux Annual Meeting <span class="when">— 2025</span></li>
-      <li>How representative are ecosystem-level evaporative stress indices of vegetation stress? — AGU Fall Meeting, Washington, D.C. <span class="when">— 2024</span></li>
-      <li>Evapotranspiration predictions: gaps, challenges, and the way forward — University of Toledo <span class="when">— 2024</span></li>
-      <li>Retrieving gap-free daily root-zone soil moisture using SFE theory — The Ohio State University <span class="when">— 2024</span></li>
-    </ul>
-
-    <div class="subhead">Service &amp; teaching</div>
-    <p class="inline-list">
-      <strong>Reviewer:</strong> Water Resources Research · JGR-Atmospheres · JGR-Biogeosciences · Remote Sensing of Environment · Journal of Hydrology · Journal of Water and Climate Change.<br>
-      <strong>Community:</strong> American Geophysical Union · Ecological Society of America · Alabama Water Institute. AGU student judging; AGU Chapman &amp; AmeriFlux breakout facilitator / co-organizer.<br>
-      <strong>Teaching:</strong> Process Hydrology (CEE 491/591), Univ. of Alabama (2023–2024); graduate-student mentoring.
-    </p>
-
-    <p style="margin-top:18px;font-size:.95rem;">Full details are in my <a href="My_CV_NEW_Latest.pdf" target="_blank" rel="noopener">curriculum vitae (PDF)</a>.</p>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact">
-  <div class="wrap">
-    <h2>Contact</h2>
-    <p class="inline-list">
-      Office 1033, Cyber Hall, 248 Kirkbride Ln, Tuscaloosa, AL 35401<br>
-      <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a>
-    </p>
-    <p class="icns" style="margin-top:12px;">
+    <div class="side-icns">
       <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
       <a href="https://orcid.org/0000-0002-2982-069X" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
       <a href="https://www.researchgate.net/profile/Pushpendra-Raghav-2" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
       <a href="https://github.com/praghav444" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.linkedin.com/in/praghav444" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="mailto:ppushpendra@ua.edu" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </p>
-  </div>
-</section>
+      <a href="My_CV_NEW_Latest.pdf" target="_blank" rel="noopener" title="Curriculum Vitae (PDF)" aria-label="CV"><i class="fa-solid fa-file-pdf"></i></a>
+    </div>
 
-<footer>
-  <div class="wrap">
-    © <span id="yr"></span> Pushpendra Raghav · The University of Alabama
-    <div class="backlink"><a href="#top">Back to top ↑</a></div>
-  </div>
-</footer>
+    <nav class="sidenav" id="sidenav">
+      <a href="#bio">Brief Bio</a>
+      <a href="#overview">Research at a Glance</a>
+      <a href="#interests">Research Interests</a>
+      <a href="#research">Selected Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#positions">Positions / Employment</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards &amp; Honors</a>
+      <a href="#grants">Grants &amp; Proposals</a>
+      <a href="#talks">Invited Talks</a>
+      <a href="#press">Press</a>
+      <a href="#software">Software &amp; Data</a>
+      <a href="#service">Professional Service</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+  <!-- ═══════════ MAIN ═══════════ -->
+  <main class="main">
+
+    <section id="bio">
+      <h2>Brief Bio</h2>
+      <p>
+        I am a Research Engineer / Scientist in the Department of Civil, Construction, and Environmental
+        Engineering at the University of Alabama, working with
+        <a href="https://mkumar.people.ua.edu/" target="_blank" rel="noopener">Prof. Mukesh Kumar</a>.
+        I work at the intersection of <strong>ecohydrology, Earth system science, and data science</strong>.
+        By combining eddy-covariance flux observations, satellite remote sensing — including next-generation
+        high-resolution thermal/SAR/optical missions (e.g., Hydrosat's Van&nbsp;Zyl constellation, NISAR) —
+        land surface models, and physics-informed machine learning (for improved model parameterization and
+        structural improvements of land surface models), I work to improve how we observe and predict
+        <strong>evapotranspiration</strong> and its individual components (direct soil/canopy evaporation and
+        plant transpiration), <strong>soil moisture</strong> (surface and root-zone), and
+        <strong>eco-hydrological extremes</strong> such as plant mortality, droughts, and floods.
+      </p>
+      <p>
+        I received my Ph.D. in Civil Engineering (Ecohydrology) from the University of Alabama in 2023, and my
+        M.Tech. from IIT Bombay. I am also a co-inventor of <strong>PULSE</strong>, a method that uses potential
+        water-use efficiency to correct eddy-covariance latent heat flux measurements for energy imbalance.
+      </p>
+    </section>
+
+    <section id="overview">
+      <h2>Research at a Glance</h2>
+      <a class="glance-fig" href="Figures/ResearchGlance.jpg" target="_blank" rel="noopener">
+        <img src="Figures/ResearchGlance.jpg" alt="Overview of my research: ground observations and satellite remote sensing constrain land surface and physics-informed machine-learning models to improve water-cycle predictions and early-warning tools.">
+      </a>
+      <p class="glance-cap">Click to enlarge.</p>
+      <p>
+        I combine <strong>ground-based observations</strong> (eddy-covariance water &amp; carbon fluxes from
+        FLUXNET; plant water use from SAPFLUXNET, PSInet) with <strong>satellite remote sensing</strong> across
+        the thermal, optical, and LiDAR domains (ECOSTRESS, MODIS, Landsat, GEDI, and next-generation missions
+        such as Hydrosat's Van Zyl constellation and NISAR) to <strong>validate and constrain</strong> land
+        surface models (ELM, CLM, ECOSYS) and <strong>physics-informed machine learning</strong> for improved
+        parameterization and structure of land surface models.
+      </p>
+      <p>
+        The goal is to better observe and predict the <strong>land water cycle</strong> — evapotranspiration and
+        its partitioning into plant transpiration vs. soil evaporation, soil moisture, and stomatal conductance —
+        and to turn those improvements into tools that matter for people: <strong>drought detection, flood
+        forecasting, numerical weather prediction, and early warning</strong> of hydrological extremes.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <ul class="bullets">
+        <li>Land–atmosphere interactions and the terrestrial water, energy, and carbon cycles</li>
+        <li>Evapotranspiration and its partitioning (transpiration vs. evaporation); soil moisture dynamics</li>
+        <li>Remote sensing of the hydrosphere and biosphere (thermal, optical, SAR, LiDAR)</li>
+        <li>Land surface and Earth system modeling (ELM, CLM, ECOSYS, H08, VIC)</li>
+        <li>Physics-informed machine learning for model improvement and process discovery</li>
+        <li>Hydrological extremes — droughts, flash droughts, and floods — and stakeholder-relevant early-warning tools</li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Selected Research</h2>
+      <p class="lead">A few studies that capture the direction of my work; the full list is below.</p>
+
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1029/2025GL114822" target="_blank" rel="noopener">Surface Flux Equilibrium theory–derived evapotranspiration outperforms ECOSTRESS, MODIS, and SSEBop</a></div>
+        <div class="m">Thakur, Raghav &amp; Kumar · Geophysical Research Letters · 2025</div>
+        <div class="d">A calibration-free ET estimate built on Surface Flux Equilibrium theory matches or exceeds leading operational satellite ET products across CONUS flux sites (with no site-specific tuning).</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1029/2024WR037652" target="_blank" rel="noopener">Structural constraints in current stomatal conductance models preclude accurate ET prediction</a></div>
+        <div class="m">Raghav, Kumar &amp; Liu · Water Resources Research · 2024</div>
+        <div class="d">Using physics-informed machine learning across FLUXNET, widely used stomatal conductance models are shown to share structural limitations that prevent accurate ET prediction under combined water and heat stress.</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" rel="noopener">Are ecosystem-level evaporative stress indices representative of vegetation stress?</a></div>
+        <div class="m">Raghav &amp; Kumar · Agricultural and Forest Meteorology · 2024</div>
+        <div class="d">Ecosystem-scale evaporative stress indices (e.g., from ECOSTRESS) can misrepresent true vegetation stress, especially during high atmospheric water demand or dry periods — with consequences for satellite-based drought monitoring.</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1029/2022WR032067" target="_blank" rel="noopener">Vegetation index–based partitioning of evapotranspiration is deficient in grazed systems</a></div>
+        <div class="m">Raghav, Wagle, Kumar, Banerjee &amp; Neel · Water Resources Research · 2022</div>
+        <div class="d">The common vegetation-index approach to separating transpiration from soil evaporation breaks down in grazed and managed grasslands, cautioning against its use in agricultural landscapes.</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank" rel="noopener">Retrieving gap-free daily root-zone soil moisture using Surface Flux Equilibrium theory</a></div>
+        <div class="m">Raghav &amp; Kumar · Environmental Research Letters · 2021</div>
+        <div class="d">Introduces a calibration-free method to estimate continuous daily root-zone soil moisture from standard meteorology, validated across Mesonet sites spanning diverse biomes.</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">PULSE: correcting eddy-covariance latent heat fluxes for surface energy imbalance</a></div>
+        <div class="m">Raghav &amp; Kumar · Water Resources Research · 2026</div>
+        <div class="d">A new method that leverages the potential underlying water-use-efficiency–ET relationship to correct measured latent heat fluxes for the long-standing eddy-covariance energy-imbalance problem.</div>
+      </div>
+      <div class="hl">
+        <div class="t"><a href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" rel="noopener">Revamping the extended-range forecast of the Indian Summer Monsoon</a></div>
+        <div class="m">Raghav, Borkotoky, Joseph, Chattopadhyay, Sahai &amp; Ghosh · Climate Dynamics · 2020</div>
+        <div class="d">A revamped statistical–dynamical framework improves extended-range (2–4 week) forecast skill of the Extended Range Prediction System for the Indian Summer Monsoon, which delivers most of India's annual rainfall and underpins planning for over a billion people.</div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p class="lead"><span class="tag">FA</span> first author &nbsp;·&nbsp; <sup>*</sup> equal contribution &nbsp;·&nbsp;
+        see also <a href="https://scholar.google.co.in/citations?user=SOPAhJQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+      <div class="subhead">Peer-reviewed journal articles</div>
+      <ul class="pubs">
+        <li><span class="n">15</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). PULSE: A novel potential underlying water-use-efficiency-based method for latent heat and surface energy imbalance correction. <span class="venue">Water Resources Research.</span> <a class="doi" href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">14</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Dynamic parameterization of the Priestley–Taylor coefficient for more accurate potential evapotranspiration estimation in ungauged regions. <span class="venue">Environmental Research Letters.</span> <a class="doi" href="https://doi.org/10.1088/1748-9326/ae6464" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">13</span>Massoud, E. C., Collier, N., Wang, Y., Mao, J., Harpold, A., Kannenberg, S. A., Koren, G., Kumar, M., <strong>Raghav, P.</strong>, Ray, P., Shi, M., Tao, J., Vasu, S. P., Wang, H., Zhu, Q., &amp; Hoffman, F. M. (2026). Benchmarking soil moisture and its relationship to ecohydrologic variables in Earth system models. <span class="venue">Geoscientific Model Development, 19,</span> 3427. <a class="doi" href="https://doi.org/10.5194/gmd-19-3427-2026" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">12</span>Salvi, K., <strong>Raghav, P.</strong>, Kumar, M., Magliocca, N., &amp; Bisht, G. (2026). Discrepancy in the sign of temperature trends in reanalysis datasets. <span class="venue">Environmental Research Letters.</span> <a class="doi" href="https://doi.org/10.1088/1748-9326/ae5726" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">11</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). How well does the Evaporative Stress Index from ECOSTRESS capture site-based stresses? <span class="venue">Canadian Journal of Remote Sensing, 52</span>(1). <a class="doi" href="https://doi.org/10.1080/07038992.2026.2645742" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">10</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2025). Surface Flux Equilibrium theory–derived evapotranspiration estimate outperforms ECOSTRESS, MODIS, and SSEBop products. <span class="venue">Geophysical Research Letters, 52</span>(10), e2025GL114822. <a class="doi" href="https://doi.org/10.1029/2025GL114822" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">9</span>Ghaseminejad, A., Bhat, N., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2025). Influence of interannual leaf phenology dynamics on evapotranspiration predictions. <span class="venue">Journal of Hydrometeorology, 26,</span> 259–272. <a class="doi" href="https://doi.org/10.1175/JHM-D-24-0061.1" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">8</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2024). Are the ecosystem-level evaporative stress indices representative of evaporative stress of vegetation? <span class="venue">Agricultural and Forest Meteorology, 357,</span> 110195. <a class="doi" href="https://doi.org/10.1016/j.agrformet.2024.110195" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">7</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Kumar, M., &amp; Liu, Y. (2024). Structural constraints in current stomatal conductance models preclude accurate prediction of evapotranspiration. <span class="venue">Water Resources Research, 60</span>(8), e2024WR037652. <a class="doi" href="https://doi.org/10.1029/2024WR037652" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">6</span>Rathore, L. S., Hanasaki, N., Kumar, M., Mekonnen, M., &amp; <strong>Raghav, P.</strong> (2023). Water scarcity challenges across urban regions with expanding irrigation. <span class="venue">Environmental Research Letters, 19</span>(1), 014065. <a class="doi" href="https://doi.org/10.1088/1748-9326/ad178a" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">5</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Eldho, T. I. (2023). Investigations on the hydrological impacts of climate change on a river basin using macroscale model H08. <span class="venue">Journal of Earth System Science, 132</span>(2), 87. <a class="doi" href="https://doi.org/10.1007/s12040-023-02102-4" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">4</span><span class="tag">FA</span> Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong><sup>*</sup>, Kumar, M., &amp; Gunter, A. G. (2022). Influence of water-use efficiency parameterizations on flux-variance-similarity-based partitioning of evapotranspiration. <span class="venue">Agricultural and Forest Meteorology, 328,</span> 109254. <a class="doi" href="https://doi.org/10.1016/j.agrformet.2022.109254" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">3</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Wagle, P., Kumar, M., Banerjee, T., &amp; Neel, J. P. S. (2022). Vegetation index–based partitioning of evapotranspiration is deficient in grazed systems. <span class="venue">Water Resources Research, 58</span>(8), e2022WR032067. <a class="doi" href="https://doi.org/10.1029/2022WR032067" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">2</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, &amp; Kumar, M. (2021). Retrieving gap-free daily root-zone soil moisture using Surface Flux Equilibrium theory. <span class="venue">Environmental Research Letters, 16</span>(10), 104007. <a class="doi" href="https://doi.org/10.1088/1748-9326/ac2441" target="_blank" rel="noopener">DOI</a></li>
+        <li><span class="n">1</span><span class="tag">FA</span> <strong>Raghav, P.</strong>, Borkotoky, S. S., Joseph, J., Chattopadhyay, R., Sahai, A. K., &amp; Ghosh, S. (2020). Revamping extended-range forecast of the Indian Summer Monsoon. <span class="venue">Climate Dynamics, 55,</span> 3397–3411. <a class="doi" href="https://doi.org/10.1007/s00382-020-05454-5" target="_blank" rel="noopener">DOI</a></li>
+      </ul>
+
+      <div class="subhead">Under review / in revision</div>
+      <ul class="pubs">
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, Liu, Y., Kumar, M., &amp; Bisht, G. (2026). Multilayer canopy model outperforms big-leaf model for evapotranspiration predictions under high water and heat stress conditions. <span class="venue">Journal of Advances in Modeling Earth Systems.</span></li>
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Padé approximation of the Clausius–Clapeyron relation: an explicit and computationally efficient alternative to the Penman–Monteith equation. <span class="venue">Geophysical Research Letters.</span></li>
+        <li><span class="n">·</span>Thakur, H., <strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Benchmark data of root-zone soil moisture over the conterminous USA based on vegetation-specific rooting depths. <span class="venue">Vadose Zone Journal.</span></li>
+        <li><span class="n">·</span>Wolkeba, F. T., <strong>Raghav, P.</strong>, Kumar, M., &amp; Thakur, H. (2026). CALFRET: a high-performing, calibration-free 1-km evapotranspiration product over the conterminous USA. <span class="venue">Water Resources Research.</span> <a class="doi" href="https://doi.org/10.22541/essoar.175915560.04888321/v3" target="_blank" rel="noopener">Preprint</a></li>
+        <li><span class="n">·</span>Wagle, P.<sup>*</sup>, <strong>Raghav, P.</strong>, Kumar, M., Scanlon, T. M., Northup, B. K., Moffet, C., Gunter, S., &amp; Xiao, X. (2026). Partitioning evapotranspiration in C3–C4 mixed tallgrass prairies. <span class="venue">Agricultural Water Management.</span></li>
+      </ul>
+
+      <div class="subhead">In preparation</div>
+      <ul class="pubs">
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Large underestimation of flash drought events in reanalysis data. <span class="venue">In prep. for Geophysical Research Letters.</span></li>
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Kumar, M. (2026). Evapotranspiration dynamics and partitioning in soybean under different irrigation practices. <span class="venue">In prep. for Agricultural and Forest Meteorology.</span></li>
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Forbrich, I. (2026). Evapotranspiration partitioning in tidal wetlands across hydrological, salinity, and vegetation gradients. <span class="venue">In preparation.</span></li>
+        <li><span class="n">·</span>Moreno, H., Massoud, E., Yaari, A., Huang, J., Koren, G., <strong>Raghav, P.</strong>, et al. (2026). How is artificial intelligence enhancing soil moisture estimation and prediction? <span class="venue">In preparation.</span></li>
+        <li><span class="n">·</span>Desai, A., Wanner, L., Levy, P., Zhang, W., Durden, D., Metzger, S., <strong>Raghav, P.</strong>, et al. (2026). Evaluating mechanistic corrections for surface energy imbalance in eddy covariance. <span class="venue">In preparation.</span></li>
+      </ul>
+
+      <div class="subhead">Book chapter</div>
+      <ul class="pubs">
+        <li><span class="n">·</span><strong>Raghav, P.</strong>, &amp; Eldho, T. I. (2021). Assessing the impacts of climate change on crop yield in the Upper Godavari River sub-basin using the H08 hydrological model. In <span class="venue">Climate Change Impacts on Water Resources,</span> 193–205. Springer. <a class="doi" href="https://doi.org/10.1007/978-3-030-64202-0_18" target="_blank" rel="noopener">DOI</a></li>
+      </ul>
+    </section>
+
+    <section id="positions">
+      <h2>Positions / Employment</h2>
+      <div class="item"><span class="h">Research Engineer</span> · The University of Alabama<br><span class="s">Dec 2024 – present</span></div>
+      <div class="item"><span class="h">Postdoctoral Associate</span> · The University of Alabama<br><span class="s">Dec 2023 – Dec 2024</span></div>
+      <div class="item"><span class="h">Graduate Research Assistant</span> · The University of Alabama<br><span class="s">Aug 2019 – Dec 2023</span></div>
+      <div class="item"><span class="h">Junior Research Fellow</span> · IIT Bombay<br><span class="s">Jun 2018 – Jul 2019</span></div>
+      <div class="item"><span class="h">Graduate Teaching Assistant</span> · IIT Bombay<br><span class="s">Jul 2016 – Jun 2018</span></div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item"><span class="h">Ph.D., Civil Engineering (Ecohydrology)</span> · The University of Alabama<br><span class="s">2023 · Advisor: Mukesh Kumar</span></div>
+      <div class="item"><span class="h">M.Tech., Water Resources Engineering</span> · IIT Bombay<br><span class="s">2018 · Advisor: T. I. Eldho</span></div>
+      <div class="item"><span class="h">B.Tech., Civil Engineering</span> · Dr. A.P.J. Abdul Kalam Technical University<br><span class="s">2016</span></div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards &amp; Honors</h2>
+      <ul class="simple">
+        <li>Travel Grant, AGU Energy Balance Chapman Conference, Boulder, CO <span class="when">— 2025</span></li>
+        <li>Outstanding Dissertation Award, Dept. of Civil, Construction &amp; Environmental Engineering, Univ. of Alabama <span class="when">— 2025</span></li>
+        <li>Top rank, M.Tech Water Resources Engineering, IIT Bombay <span class="when">— 2018</span></li>
+        <li>Ministry of Human Resource Development (MHRD), India scholarship <span class="when">— 2016–2018</span></li>
+      </ul>
+    </section>
+
+    <section id="grants">
+      <h2>Grants &amp; Proposals</h2>
+      <ul class="simple">
+        <li>VIEW-2 (Virtual Institute for Earth's Water) — <em>FLARE: field-scale retrieval of plant water use and ecosystem resilience from space</em> <span class="when">— EOI submitted, 2026</span></li>
+        <li>U.S. DOE (BER, DE-FOA-0003600) — ML-enhanced energy &amp; water partitioning in the E3SM Land Model over the Southeastern U.S. <span class="when">— under review, 2026</span></li>
+        <li>USDA ARS AI Innovation Fund — high-resolution root-zone soil moisture over CONUS via SFE-informed ML <span class="when">— under review, 2026</span></li>
+        <li>AGU Chapman Travel Grant — WUE-based correction of eddy-covariance latent heat fluxes <span class="when">— approved, 2025</span></li>
+      </ul>
+    </section>
+
+    <section id="talks">
+      <h2>Invited Talks</h2>
+      <ul class="simple">
+        <li>Advancing measurements and modeling of invisible components of the water budget — AGU Fall Meeting, New Orleans <span class="when">— 2025</span></li>
+        <li>Flux partitioning in wetland systems — AmeriFlux Annual Meeting <span class="when">— 2025</span></li>
+        <li>How representative are ecosystem-level evaporative stress indices of vegetation stress? — AGU Fall Meeting, Washington, D.C. <span class="when">— 2024</span></li>
+        <li>Evapotranspiration predictions: gaps, challenges, and the way forward — University of Toledo <span class="when">— 2024</span></li>
+        <li>Retrieving gap-free daily root-zone soil moisture using SFE theory — The Ohio State University <span class="when">— 2024</span></li>
+      </ul>
+    </section>
+
+    <section id="press">
+      <h2>Press</h2>
+      <div class="press">
+        <a class="press-img" href="https://eos.org/research-spotlights/improving-eddy-tower-evapotranspiration-estimates" target="_blank" rel="noopener">
+          <img src="photos/eos_flux_tower.jpg" alt="Eddy-covariance flux tower — Eos research spotlight">
+        </a>
+        <div class="press-body">
+          <div class="t"><a href="https://eos.org/research-spotlights/improving-eddy-tower-evapotranspiration-estimates" target="_blank" rel="noopener">Improving Eddy Tower Evapotranspiration Estimates</a></div>
+          <div class="m">Eos (AGU) · Research Spotlight · by Rebecca Dzombak · May 2026</div>
+          <div class="d">Featured coverage of our <strong>PULSE</strong> method for correcting eddy-covariance evapotranspiration measurements for surface energy imbalance using potential water-use efficiency (<a href="https://doi.org/10.1029/2025WR042766" target="_blank" rel="noopener">Raghav &amp; Kumar, 2026, <em>Water Resources Research</em></a>).</div>
+          <div class="credit">Image via Eos</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="software">
+      <h2>Software &amp; Data</h2>
+      <ul class="simple">
+        <li>Getting started with Hydrosat satellite data — STAC access, LST, NDVI &amp; red-edge indices, cloud masking, and geospatial analysis. <a href="https://github.com/praghav444/hydrosat-getting-started" target="_blank" rel="noopener">GitHub</a> <span class="when">· 2026</span></li>
+        <li>Evaluating multilayer vs. big-leaf canopy models for evapotranspiration under water and heat stress. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Jan 2026</span></li>
+        <li>Dynamic parameterization of the Priestley–Taylor coefficient for potential ET in ungauged regions. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Nov 2025</span></li>
+        <li>PULSE — correcting eddy-covariance latent heat fluxes for energy imbalance via potential water-use efficiency. <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Oct 2025</span></li>
+        <li>Water flux partitioning using flux-variance-similarity theory in wetland settings. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Oct 2025</span></li>
+        <li>Guide to downloading and processing remote sensing data in R. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Apr 2025</span></li>
+        <li>Information-theory-based model performance diagnostics. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Aug 2024</span></li>
+        <li>Ecosystem-scale transpiration from the SAPFLUXNET database. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> <span class="when">· Apr 2024</span></li>
+        <li>Water flux partitioning using high-frequency eddy-covariance data. <a href="https://github.com/praghav444" target="_blank" rel="noopener">GitHub</a> · <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Aug 2023</span></li>
+        <li>Physical and machine-learning models of stomatal conductance for ET prediction. <a href="https://zenodo.org/record/7768479" target="_blank" rel="noopener">Zenodo</a> <span class="when">· Mar 2023</span></li>
+        <li>Water flux partitioning data in disturbed (grazed) wheat systems. <a href="https://doi.org/10.15482/USDA.ADC/1527834" target="_blank" rel="noopener">USDA Ag Data Commons</a> <span class="when">· Aug 2022</span></li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Professional Service &amp; Teaching</h2>
+      <p class="inline-list">
+        <strong>Reviewer:</strong> Water Resources Research · JGR-Atmospheres · JGR-Biogeosciences · Remote Sensing of Environment · Journal of Hydrology · Journal of Water and Climate Change.<br>
+        <strong>Community:</strong> American Geophysical Union · Ecological Society of America · Alabama Water Institute. AGU student judging; AGU Chapman &amp; AmeriFlux breakout facilitator / co-organizer.<br>
+        <strong>Teaching:</strong> Process Hydrology (CEE 491/591), Univ. of Alabama (2023–2024); graduate-student mentoring.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="inline-list">
+        Office 1033, Cyber Hall, 248 Kirkbride Ln, Tuscaloosa, AL 35401<br>
+        <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a> · +1 313-742-3251
+      </p>
+      <footer>
+        © <span id="yr"></span> Pushpendra Raghav · The University of Alabama
+      </footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+// scrollspy: highlight current section in the sidebar nav
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.sidenav a[href^="#"]'));
+  var map={}; links.forEach(function(a){var id=a.getAttribute('href').slice(1); if(id)map[id]=a;});
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('active');});
+        if(map[e.target.id])map[e.target.id].classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px',threshold:0});
+  document.querySelectorAll('.main section[id]').forEach(function(s){obs.observe(s);});
+})();
+</script>
 </body>
 </html>
