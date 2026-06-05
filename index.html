@@ -17,9 +17,7 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{margin:0;
-  background:linear-gradient(rgba(235,240,242,.42),rgba(235,240,242,.52)),url('photos/water_bg.jpg') center/cover fixed;
-  background-color:var(--page);color:var(--ink);
+body{margin:0;background:var(--page);color:var(--ink);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
 a{color:var(--accent);text-decoration:none;}
@@ -163,9 +161,17 @@ footer{color:var(--muted);font-size:.82rem;}
 .subhead.collapsible::before{content:"\f107";font-family:"Font Awesome 6 Free";font-weight:900;font-size:.78rem;color:var(--accent);width:10px;}
 .subhead.collapsible.closed::before{content:"\f105";}
 .subhead .count{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0;}
+
+/* dry -> moist background (brown/dry grass blending into green grass) */
+body::before{content:"";position:fixed;inset:0;z-index:-3;background:url('photos/dry_grass.jpg') center bottom/cover no-repeat;}
+body::after{content:"";position:fixed;inset:0;z-index:-2;background:url('photos/green_grass.jpg') center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 22%,#000 68%);mask-image:linear-gradient(90deg,transparent 22%,#000 68%);}
+.bgwash{position:fixed;inset:0;z-index:-1;background:rgba(237,241,243,.58);pointer-events:none;}
 </style>
 </head>
 <body>
+
+<div class="bgwash" aria-hidden="true"></div>
 
 <div class="banner">
   <div class="banner-cap">
@@ -530,7 +536,7 @@ footer{color:var(--muted);font-size:.82rem;}
         <a href="mailto:ppushpendra@ua.edu">ppushpendra@ua.edu</a> · +1 313-742-3251
       </p>
       <footer>© <span id="yr"></span> Pushpendra Raghav · The University of Alabama<br>
-        <span style="opacity:.85;">Background photo by Linda Xu on Unsplash</span></footer>
+        <span style="opacity:.85;">Background photos via Unsplash</span></footer>
     </section>
 
   </main>
